@@ -1,20 +1,29 @@
 package com.reanon.community.controller;
 
+import com.google.code.kaptcha.Producer;
 import com.reanon.community.entity.User;
 import com.reanon.community.service.UserService;
+import com.reanon.community.utils.CommunityUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
+import javax.imageio.ImageIO;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
-import static com.reanon.community.utils.CommunityConstant.ACTIVATION_REPEAT;
-import static com.reanon.community.utils.CommunityConstant.ACTIVATION_SUCCESS;
+import static com.reanon.community.utils.CommunityConstant.*;
 
 /**
  * 登录、登出、注册
@@ -24,10 +33,19 @@ import static com.reanon.community.utils.CommunityConstant.ACTIVATION_SUCCESS;
  */
 @Controller
 public class LoginController {
+    // 日志对象, 以当前类对象创建对象
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @Autowired
     private UserService userService;
+
+    // 注入验证码生成器
+    @Autowired
+    private Producer kaptchaProducer;
+
+    // 当前项目的访问路径 /anchor
+    @Value("${server.servlet.context-path}")
+    private String contextPath;
 
     /**
      * 进入注册界面
@@ -87,5 +105,94 @@ public class LoginController {
             model.addAttribute("target", "/index");
         }
         return "/site/operate-result";
+    }
+
+    /**
+     * 生成验证码, 并存入 Redis
+     *
+     * @param response
+     */
+    @GetMapping("/kaptcha")
+    public void getKaptcha(HttpServletResponse response, HttpSession session) {
+        // 生成验证码
+        String text = kaptchaProducer.createText(); // 生成随机字符
+        System.out.println("验证码：" + text);
+        BufferedImage image = kaptchaProducer.createImage(text); // 生成图片
+
+        // 验证码存入session
+        session.setAttribute("kaptcha", text);
+
+        // 将图片输出给浏览器
+        // 不用关闭流, SpringMVC 会自动做
+        response.setContentType("image/png");
+        try {
+            ServletOutputStream os = response.getOutputStream();
+            ImageIO.write(image, "png", os);
+        } catch (IOException e) {
+            logger.error("响应验证码失败", e.getMessage());
+        }
+    }
+
+    /**
+     * 用户登录
+     *
+     * @param username   用户名
+     * @param password   密码
+     * @param code       验证码
+     * @param rememberMe 是否记住我（点击记住我后，凭证的有效期延长）
+     * @param response   页面响应
+     * @return
+     */
+    @PostMapping("/login")
+    public String login(@RequestParam("username") String username,
+                        @RequestParam("password") String password,
+                        @RequestParam("code") String code,
+                        @RequestParam(value = "rememberMe", required = false) boolean rememberMe,
+                        Model model,
+                        HttpSession session,
+                        HttpServletResponse response) {
+        // 从 session 中获取验证码
+        String kaptcha = (String) session.getAttribute("kaptcha");
+
+        // 检查验证码
+        if (StringUtils.isBlank(kaptcha) || StringUtils.isBlank(code) || !kaptcha.equalsIgnoreCase(code)) {
+            model.addAttribute("codeMsg", "验证码错误");
+            // 跳转到登录页面
+            return "/site/login";
+        }
+
+        // 凭证过期时间（是否记住我）
+        int expiredSeconds = rememberMe ? REMEMBER_EXPIRED_SECONDS : DEFAULT_EXPIRED_SECONDS;
+        // 验证用户名和密码
+        Map<String, Object> map = userService.login(username, password, expiredSeconds);
+        // 判断是否登录成功
+        if (map.containsKey("ticket")) {
+            // 账号和密码均正确，则服务端会生成 ticket，浏览器通过 cookie 存储 ticket
+            Cookie cookie = new Cookie("ticket", map.get("ticket").toString());
+            // 设置 cookie 有效范围, 使得整个项目都有效
+            cookie.setPath(contextPath);
+            cookie.setMaxAge(expiredSeconds);
+            response.addCookie(cookie);
+            return "redirect:/index";
+        } else {
+            // 登录失败
+            model.addAttribute("usernameMsg", map.get("usernameMsg"));
+            model.addAttribute("passwordMsg", map.get("passwordMsg"));
+            return "/site/login";
+        }
+    }
+
+    /**
+     * 用户登出
+     *
+     * @param ticket 设置凭证状态为无效
+     * @return
+     */
+    @GetMapping("/logout")
+    public String logout(@CookieValue("ticket") String ticket) {
+        userService.logout(ticket);
+        // SecurityContextHolder.clearContext();
+        // 回到登陆页面
+        return "redirect:/login";
     }
 }

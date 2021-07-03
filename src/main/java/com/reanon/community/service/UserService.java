@@ -1,6 +1,8 @@
 package com.reanon.community.service;
 
+import com.reanon.community.dao.LoginTicketMapper;
 import com.reanon.community.dao.UserMapper;
+import com.reanon.community.entity.LoginTicket;
 import com.reanon.community.entity.User;
 import com.reanon.community.utils.CommunityUtil;
 import com.reanon.community.utils.MailClient;
@@ -27,6 +29,7 @@ import static com.reanon.community.utils.CommunityConstant.*;
  */
 @Service
 public class UserService {
+
     @Autowired
     private UserMapper userMapper;
 
@@ -45,6 +48,10 @@ public class UserService {
     // 项目名(访问路径)
     @Value("${server.servlet.context-path}")
     private String contextPath;
+
+    // 登陆凭证
+    @Autowired
+    private LoginTicketMapper loginTicketMapper;
 
     /**
      * 根据 Id 查询用户
@@ -141,4 +148,103 @@ public class UserService {
             return ACTIVATION_FAILURE;
         }
     }
+
+    /**
+     * 用户登录（为用户创建凭证）
+     *
+     * @param expiredSeconds 多少秒后凭证过期
+     * @return Map<String, Object> 返回错误提示消息以及 ticket(凭证)
+     */
+    public Map<String, Object> login(String username, String password, int expiredSeconds) {
+        Map<String, Object> map = new HashMap<>();
+
+        // 空值处理
+        if (StringUtils.isBlank(username)) {
+            map.put("usernameMsg", "账号不能为空");
+            return map;
+        }
+        if (StringUtils.isBlank(password)) {
+            map.put("passwordMsg", "密码不能为空");
+            return map;
+        }
+
+        // 验证账号
+        User user = userMapper.selectByName(username);
+        if (user == null) {
+            map.put("usernameMsg", "该账号不存在");
+            return map;
+        }
+
+        // 验证账号状态
+        if (user.getStatus() == 0) {
+            // 账号未激活
+            map.put("usernameMsg", "该账号未激活");
+            return map;
+        }
+
+        // 验证密码
+        // 明文密码+盐再进行加密
+        password = CommunityUtil.md5(password + user.getSalt());
+        // 密码进行比对
+        if (!user.getPassword().equals(password)) {
+            map.put("passwordMsg", "密码错误");
+            return map;
+        }
+
+        // 用户名和密码均正确，则为该用户生成登录凭证
+        LoginTicket loginTicket = new LoginTicket();
+        loginTicket.setUserId(user.getId());
+        loginTicket.setTicket(CommunityUtil.generateUUID()); // 随机凭证
+        loginTicket.setStatus(0); // 设置凭证状态为有效（当用户登出的时候，设置凭证状态为无效）
+        loginTicket.setExpired(new Date(System.currentTimeMillis() + expiredSeconds * 1000)); // 设置凭证到期时间
+
+        // 将登录凭证存入MySQl 数据库
+        loginTicketMapper.insertLoginTicket(loginTicket);
+
+        map.put("ticket", loginTicket.getTicket());
+        return map;
+    }
+
+    /**
+     * 用户退出（将凭证状态设为无效）
+     *
+     * @param ticket
+     */
+    public void logout(String ticket) {
+        // 设为登录无效
+        loginTicketMapper.updateStatus(ticket, 1);
+        // // 修改（先删除再插入）对应用户在 redis 中的凭证状态
+        // String redisKey = RedisKeyUtil.getTicketKey(ticket);
+        // LoginTicket loginTicket = (LoginTicket) redisTemplate.opsForValue().get(redisKey);
+        // loginTicket.setStatus(1);
+        // redisTemplate.opsForValue().set(redisKey, loginTicket);
+    }
+
+    /**
+     * 根据 ticket 查询 LoginTicket 信息
+     *
+     * @param ticket 登录凭证
+     * @return
+     */
+    public LoginTicket findLoginTicket(String ticket) {
+        // 从 MySQL 中查询ticket
+        return loginTicketMapper.selectByTicket(ticket);
+        // String redisKey = RedisKeyUtil.getTicketKey(ticket);
+        // return (LoginTicket) redisTemplate.opsForValue().get(redisKey);
+    }
+
+
+    /**
+     * 修改用户头像
+     *
+     * @param userId
+     * @param headUrl
+     * @return
+     */
+    public int updateHeader(int userId, String headUrl) {
+        int rows = userMapper.updateHeader(userId, headUrl);
+        // clearCache(userId);
+        return rows;
+    }
+
 }

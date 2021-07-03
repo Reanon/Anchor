@@ -12,7 +12,7 @@
 <body>
 <div class="nk-container">
     <!-- 头部 -->
-    <header class="bg-dark sticky-top" th:fragment="header" style="box-shadow: 5px 5px 5px #cfcccc;">
+    <header class="bg-light sticky-top" th:fragment="header" style="box-shadow: 5px 5px 5px #cfcccc;">
         <div class="container">
             <!-- 导航 -->
             <nav class="navbar navbar-expand-lg navbar-dark">
@@ -27,31 +27,39 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item ml-3 btn-group-vertical">
-                            <a class="nav-link" th:href="@{/index}">首页</a>
+                            <a class="nav-link" th:href="@{/index}">
+                                <i class="bi bi-house"></i> 首页
+                            </a>
                         </li>
-                        <li class="nav-item ml-3 btn-group-vertical">
-                            <a class="nav-link position-relative" href="site/letter.html">消息<span
-                                    class="badge badge-danger">12</span></a>
+                        <li class="nav-item ml-3 btn-group-vertical" th:if="${loginUser != null}">
+                            <a class="nav-link position-relative" th:href="@{/letter/list}">
+                                <i class="bi bi-envelope"></i> 消息
+                                <span class="badge badge-danger">12</span>
+                            </a>
                         </li>
-                        <li class="nav-item ml-3 btn-group-vertical">
+                        <li class="nav-item ml-3 btn-group-vertical" th:if="${loginUser==null}">
                             <a class="nav-link" th:href="@{/register}">注册</a>
                         </li>
-                        <li class="nav-item ml-3 btn-group-vertical">
+                        <li class="nav-item ml-3 btn-group-vertical" th:if="${loginUser==null}">
                             <a class="nav-link" th:href="@{/login}">登录</a>
                         </li>
-                        <li class="nav-item ml-3 btn-group-vertical dropdown">
+                        <li class="nav-item ml-3 btn-group-vertical dropdown" th:if="${loginUser!=null}">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="http://images.nowcoder.com/head/1t.png" class="rounded-circle"
+                                <img th:src="${loginUser.headerUrl}" class="rounded-circle"
                                      style="width:30px;"/>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item text-center" href="site/profile.html">个人主页</a>
-                                <a class="dropdown-item text-center" href="site/setting.html">账号设置</a>
-                                <a class="dropdown-item text-center" href="site/login.html">退出登录</a>
+                                <a class="dropdown-item text-center" th:href="@{/user/setting}">账号设置</a>
+                                <a class="dropdown-item text-center" th:href="@{/logout}">退出登录</a>
                                 <div class="dropdown-divider"></div>
-                                <span class="dropdown-item text-center text-secondary">nowcoder</span>
+                                <span class="dropdown-item text-center text-secondary"
+                                      th:utext="${loginUser.username}"></span>
                             </div>
+                        </li>
+                        <li class="nav-item ml-3 btn-group-vertical">
+                            <a class="nav-link" href="https://github.com/Reanon">🎑 Reanon</a>
                         </li>
                     </ul>
                     <!-- 搜索 -->

@@ -21,15 +21,18 @@
 			<div class="container pl-5 pr-5 pt-3 pb-3 mt-3 mb-3">
 				<h3 class="text-center text-info border-bottom pb-3">登&nbsp;&nbsp;录</h3>
 				<form class="mt-5" method="post" th:action="@{/login}">
+					<!--输入账号-->
 					<div class="form-group row">
 						<label for="username" class="col-sm-2 col-form-label text-right">账号:</label>
 						<div class="col-sm-10">
 							<input type="text" th:class="|form-control ${usernameMsg != null ? 'is-invalid' : ''}|"
 								   th:value="${param.username}"
 								   id="username" name="username" placeholder="请输入您的账号!" required>
+							<!--如果有错误信息则显示-->
 							<div class="invalid-feedback" th:text="${usernameMsg}"></div>
 						</div>
 					</div>
+					<!--输入密码-->
 					<div class="form-group row mt-4">
 						<label for="password" class="col-sm-2 col-form-label text-right">密码:</label>
 						<div class="col-sm-10">
@@ -39,6 +42,7 @@
 							<div class="invalid-feedback" th:text="${passwordMsg}"></div>
 						</div>
 					</div>
+					<!--验证码-->
 					<div class="form-group row mt-4">
 						<label for="code" class="col-sm-2 col-form-label text-right">验证码:</label>
 						<div class="col-sm-6">
@@ -51,7 +55,8 @@
 							<img th:src="@{/kaptcha}" id = "kaptcha"  style="width:100px;height:40px;" class="mr-2"/>
 							<a href="javascript:refresh_kaptcha();" class="font-size-12 align-bottom">刷新验证码</a>
 						</div>
-					</div>				
+					</div>
+					<!--是否记住我-->
 					<div class="form-group row mt-4">
 						<div class="col-sm-2"></div>
 						<div class="col-sm-10">
@@ -60,7 +65,8 @@
 							<label class="form-check-label" for="rememberMe">记住我</label>
 							<a href="forget.html" class="text-danger float-right">忘记密码?</a>
 						</div>
-					</div>				
+					</div>
+					<!--表单提交-->
 					<div class="form-group row mt-4">
 						<div class="col-sm-2"></div>
 						<div class="col-sm-10 text-center">

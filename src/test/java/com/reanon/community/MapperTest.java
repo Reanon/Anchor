@@ -1,8 +1,10 @@
 package com.reanon.community;
 
 import com.reanon.community.dao.DiscussPostMapper;
+import com.reanon.community.dao.LoginTicketMapper;
 import com.reanon.community.dao.UserMapper;
 import com.reanon.community.entity.DiscussPost;
+import com.reanon.community.entity.LoginTicket;
 import com.reanon.community.entity.User;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -21,6 +23,10 @@ public class MapperTest {
 
     @Autowired
     private UserMapper userMapper;
+
+    // 登陆凭证
+    @Autowired
+    private LoginTicketMapper loginTicketMapper;
 
     @Autowired
     private DiscussPostMapper discussPostMapper;
@@ -69,5 +75,25 @@ public class MapperTest {
         discussPosts.forEach(System.out::println);
 
         System.out.println(discussPostMapper.selectDiscussPostRows(0));
+    }
+
+    @Test
+    public void testInsertLoginTicket() {
+        LoginTicket loginTicket = new LoginTicket();
+        loginTicket.setUserId(101);
+        loginTicket.setTicket("abc");
+        loginTicket.setStatus(0);
+        loginTicket.setExpired(new Date(System.currentTimeMillis() + 1000 * 60 * 5));   //5分钟
+
+        loginTicketMapper.insertLoginTicket(loginTicket);
+    }
+
+    @Test
+    public void testSelectAndUpdateLoginTicket() {
+        LoginTicket loginTicket = loginTicketMapper.selectByTicket("abc");
+        System.out.println(loginTicket);
+        loginTicketMapper.updateStatus("abc", 1);
+        loginTicket = loginTicketMapper.selectByTicket("abc");
+        System.out.println(loginTicket);
     }
 }
