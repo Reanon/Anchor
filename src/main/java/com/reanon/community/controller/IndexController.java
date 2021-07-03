@@ -75,5 +75,4 @@ public class IndexController {
         model.addAttribute("orderMode", orderMode);
         return "index";
     }
-
 }
