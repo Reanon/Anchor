@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
     $("#topBtn").click(updateTop);
     $("#wonderfulBtn").click(setWonderful);
     $("#deleteBtn").click(setDelete);
@@ -8,17 +8,16 @@ $(function(){
 function like(btn, entityType, entityId, entityUserId, postId) {
     $.post(
         CONTEXT_PATH + "/like",
-        {"entityType":entityType, "entityId":entityId, "entityUserId":entityUserId, "postId":postId },
-        function(data) {
+        {"entityType": entityType, "entityId": entityId, "entityUserId": entityUserId, "postId": postId},
+        function (data) {
             data = $.parseJSON(data);
             if (data.code == 0) {
+                // 修改按钮的子标签中的值
                 $(btn).children("i").text(data.likeCount);
                 $(btn).children("b").text(data.likeStatus == 1 ? '已赞' : '赞');
-            }
-            else {
+            } else {
                 alert(data.msg);
             }
-
         }
     )
 }
@@ -37,8 +36,7 @@ function updateTop() {
             if (data.code == 0) {
                 // 偷个懒，直接刷新界面
                 window.location.reload();
-            }
-            else {
+            } else {
                 alert(data.msg);
             }
         }
@@ -49,14 +47,13 @@ function updateTop() {
 function setWonderful() {
     $.post(
         CONTEXT_PATH + "/discuss/wonderful",
-        {"id":$("#postId").val()},
+        {"id": $("#postId").val()},
         function (data) {
             data = $.parseJSON(data);
             if (data.code == 0) {
                 // 加精成功后，将加精按钮设置为不可用
                 $("#wonderfulBtn").attr("disabled", "disable")
-            }
-            else {
+            } else {
                 alert(data.msg);
             }
         }
@@ -67,14 +64,13 @@ function setWonderful() {
 function setDelete() {
     $.post(
         CONTEXT_PATH + "/discuss/delete",
-        {"id":$("#postId").val()},
+        {"id": $("#postId").val()},
         function (data) {
             data = $.parseJSON(data);
             if (data.code == 0) {
                 // 删除成功后，跳转到首页
                 location.href = CONTEXT_PATH + "/index";
-            }
-            else {
+            } else {
                 alert(data.msg);
             }
         }

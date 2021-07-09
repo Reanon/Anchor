@@ -60,7 +60,7 @@
                             </div>
                         </li>
                         <li class="nav-item ml-3 btn-group-vertical">
-                            <a class="nav-link" href="https://github.com/Reanon">🎑 Reanon</a>
+                            <a class="nav-link" href="https://github.com/Reanon">🎑</a>
                         </li>
                     </ul>
                     <!-- 搜索 -->
@@ -163,7 +163,8 @@
                             <u class="mr-3" th:utext="${map.user.username}"></u> <b
                                 th:text="${#dates.format(map.post.createTime,'yyyy-MM-dd HH:mm:ss')}"></b>
                             <ul class="d-inline float-right">
-                                <!--<li class="d-inline ml-2">赞 <span th:text="${map.likeCount}"></span></li>-->
+                                <!--点赞-->
+                                <li class="d-inline ml-2">赞 <span th:text="${map.likeCount}"></span></li>
                                 <li class="d-inline ml-2">|</li>
                                 <li class="d-inline ml-2">回帖 <span th:text="${map.post.commentCount}"></span></li>
                             </ul>

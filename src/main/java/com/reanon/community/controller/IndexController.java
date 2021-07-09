@@ -4,6 +4,7 @@ import com.reanon.community.entity.DiscussPost;
 import com.reanon.community.entity.Page;
 import com.reanon.community.entity.User;
 import com.reanon.community.service.DiscussPostService;
+import com.reanon.community.service.LikeService;
 import com.reanon.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static com.reanon.community.utils.CommunityConstant.ENTITY_TYPE_POST;
 
 /**
  * 首页
@@ -29,6 +32,9 @@ public class IndexController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private LikeService likeService;
 
     /**
      * 转发进入首页
@@ -68,6 +74,10 @@ public class IndexController {
                 User user = userService.findUserById(post.getUserId());
                 // 帖子对应的发布者
                 map.put("user", user);
+                // 帖子对应的点赞
+                long likeCount = likeService.findEntityLikeCount(ENTITY_TYPE_POST, post.getId());
+                map.put("likeCount", likeCount);
+
                 discussPosts.add(map);
             }
         }
