@@ -4,11 +4,13 @@ import com.google.code.kaptcha.Producer;
 import com.reanon.community.entity.User;
 import com.reanon.community.service.UserService;
 import com.reanon.community.utils.CommunityUtil;
+import com.reanon.community.utils.RedisKeyUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -38,10 +40,12 @@ public class LoginController {
 
     @Autowired
     private UserService userService;
-
     // 注入验证码生成器
     @Autowired
     private Producer kaptchaProducer;
+    // 使用Redis 优化验证码存储
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     // 当前项目的访问路径 /anchor
     @Value("${server.servlet.context-path}")
@@ -120,7 +124,19 @@ public class LoginController {
         BufferedImage image = kaptchaProducer.createImage(text); // 生成图片
 
         // 验证码存入session
-        session.setAttribute("kaptcha", text);
+        // session.setAttribute("kaptcha", text);
+
+        // 验证码的归属者
+        String kaptchaOwner = CommunityUtil.generateUUID();
+        // 将验证码存入 cookie 并设置过期时间
+        Cookie cookie = new Cookie("kaptchaOwner", kaptchaOwner);
+        cookie.setMaxAge(60);
+        cookie.setPath(contextPath);
+        response.addCookie(cookie);
+        // 将验证码存入 redis
+        String redisKey = RedisKeyUtil.getKaptchaKey(kaptchaOwner);
+        redisTemplate.opsForValue().set(redisKey, text, 60, TimeUnit.SECONDS);
+
 
         // 将图片输出给浏览器
         // 不用关闭流, SpringMVC 会自动做
@@ -141,6 +157,7 @@ public class LoginController {
      * @param code       验证码
      * @param rememberMe 是否记住我（点击记住我后，凭证的有效期延长）
      * @param response   页面响应
+     * @param kaptchaOwner 从 cookie 中取出的 kaptchaOwner
      * @return
      */
     @PostMapping("/login")
@@ -149,10 +166,18 @@ public class LoginController {
                         @RequestParam("code") String code,
                         @RequestParam(value = "rememberMe", required = false) boolean rememberMe,
                         Model model,
-                        HttpSession session,
-                        HttpServletResponse response) {
+                        // HttpSession session,
+                        HttpServletResponse response,
+                        @CookieValue("kaptchaOwner") String kaptchaOwner) {
         // 从 session 中获取验证码
-        String kaptcha = (String) session.getAttribute("kaptcha");
+        // String kaptcha = (String) session.getAttribute("kaptcha");
+        String kaptcha = null;
+        if (StringUtils.isNotBlank(kaptchaOwner)) {
+            // 从验证码归属者中获取该验证码在Redis 中的 key
+            String redisKey = RedisKeyUtil.getKaptchaKey(kaptchaOwner);
+            // 获取验证码
+            kaptcha = (String) redisTemplate.opsForValue().get(redisKey);
+        }
 
         // 检查验证码
         if (StringUtils.isBlank(kaptcha) || StringUtils.isBlank(code) || !kaptcha.equalsIgnoreCase(code)) {

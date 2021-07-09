@@ -7,17 +7,17 @@ import com.reanon.community.entity.User;
 import com.reanon.community.utils.CommunityUtil;
 import com.reanon.community.utils.MailClient;
 import com.reanon.community.utils.CommunityConstant;
+import com.reanon.community.utils.RedisKeyUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 import static com.reanon.community.utils.CommunityConstant.*;
 
@@ -49,21 +49,34 @@ public class UserService {
     @Value("${server.servlet.context-path}")
     private String contextPath;
 
-    // 登陆凭证
+    // Redis 优化登录凭证
     @Autowired
-    private LoginTicketMapper loginTicketMapper;
+    private RedisTemplate redisTemplate;
+
+    // 被废弃
+    // @Autowired
+    // private LoginTicketMapper loginTicketMapper;
 
     /**
      * 根据 Id 查询用户
      */
     public User findUserById(int id) {
-        return userMapper.selectById(id);
+        // 原: 直接从 MySQl 中查询
+        // return userMapper.selectById(id);
+        // 先从 Redis 中查询，如果不存在则先存入 Redis
+        User user = getCache(id);
+        if (user == null) {
+            initCache(id);
+        }
+        return user;
     }
+
 
     /**
      * 根据 username 查询用户
      */
     public User findUserByName(String username) {
+
         return userMapper.selectByName(username);
     }
 
@@ -142,7 +155,8 @@ public class UserService {
         } else if (user.getActivationCode().equals(code)) {
             // 修改用户状态为已激活
             userMapper.updateStatus(userId, 1);
-            // clearCache(userId); // 用户信息变更，清除缓存中的旧数据
+            // 用户信息变更，清除缓存中的旧数据
+            clearCache(userId);
             return ACTIVATION_SUCCESS;
         } else {
             return ACTIVATION_FAILURE;
@@ -199,7 +213,11 @@ public class UserService {
         loginTicket.setExpired(new Date(System.currentTimeMillis() + expiredSeconds * 1000)); // 设置凭证到期时间
 
         // 将登录凭证存入MySQl 数据库
-        loginTicketMapper.insertLoginTicket(loginTicket);
+        // loginTicketMapper.insertLoginTicket(loginTicket);
+
+        // 优化: 将登录凭证存入 Redis
+        String redisKey = RedisKeyUtil.getTicketKey(loginTicket.getTicket());
+        redisTemplate.opsForValue().set(redisKey, loginTicket);
 
         map.put("ticket", loginTicket.getTicket());
         return map;
@@ -212,25 +230,27 @@ public class UserService {
      */
     public void logout(String ticket) {
         // 设为登录无效
-        loginTicketMapper.updateStatus(ticket, 1);
-        // // 修改（先删除再插入）对应用户在 redis 中的凭证状态
-        // String redisKey = RedisKeyUtil.getTicketKey(ticket);
-        // LoginTicket loginTicket = (LoginTicket) redisTemplate.opsForValue().get(redisKey);
-        // loginTicket.setStatus(1);
-        // redisTemplate.opsForValue().set(redisKey, loginTicket);
+        // loginTicketMapper.updateStatus(ticket, 1);
+
+        // 优化：修改（先删除再插入）对应用户在 redis 中的凭证状态
+        String redisKey = RedisKeyUtil.getTicketKey(ticket);
+        LoginTicket loginTicket = (LoginTicket) redisTemplate.opsForValue().get(redisKey);
+        loginTicket.setStatus(1);
+        redisTemplate.opsForValue().set(redisKey, loginTicket);
     }
 
     /**
      * 根据 ticket 查询 LoginTicket 信息
      *
      * @param ticket 登录凭证
-     * @return
      */
     public LoginTicket findLoginTicket(String ticket) {
         // 从 MySQL 中查询ticket
-        return loginTicketMapper.selectByTicket(ticket);
-        // String redisKey = RedisKeyUtil.getTicketKey(ticket);
-        // return (LoginTicket) redisTemplate.opsForValue().get(redisKey);
+        // return loginTicketMapper.selectByTicket(ticket);
+
+        // 优化: 从 Redis从查询登录凭证
+        String redisKey = RedisKeyUtil.getTicketKey(ticket);
+        return (LoginTicket) redisTemplate.opsForValue().get(redisKey);
     }
 
 
@@ -239,12 +259,89 @@ public class UserService {
      *
      * @param userId
      * @param headUrl
-     * @return
      */
     public int updateHeader(int userId, String headUrl) {
         int rows = userMapper.updateHeader(userId, headUrl);
-        // clearCache(userId);
+        // 用户信息变更，清除缓存中的旧数据
+        clearCache(userId);
         return rows;
     }
+
+    /**
+     * 修改用户密码（对新密码加盐加密存入数据库）
+     *
+     * @param userId
+     * @param newPassword 新密码
+     * @return
+     */
+    public int updatePassword(int userId, String newPassword) {
+        User user = userMapper.selectById(userId);
+        // 重新加盐加密
+        newPassword = CommunityUtil.md5(newPassword + user.getSalt());
+        // 用户信息变更，清除缓存中的旧数据
+        clearCache(userId);
+        return userMapper.updatePassword(userId, newPassword);
+    }
+
+
+    /**
+     * 优先从缓存中取值
+     *
+     * @param userId
+     */
+    private User getCache(int userId) {
+        String redisKey = RedisKeyUtil.getUserKey(userId);
+        return (User) redisTemplate.opsForValue().get(redisKey);
+    }
+
+    /**
+     * 缓存中没有该用户信息时，则将其存入缓存
+     *
+     * @param userId
+     */
+    private User initCache(int userId) {
+        // 从MySQL 中查询到用户
+        User user = userMapper.selectById(userId);
+        // 存入 Redis 并设置过期时间
+        String redisKey = RedisKeyUtil.getUserKey(userId);
+        redisTemplate.opsForValue().set(redisKey, user, 3600, TimeUnit.SECONDS);
+        return user;
+    }
+
+    /**
+     * 用户信息变更时清除对应缓存数据
+     *
+     * @param userId
+     */
+    private void clearCache(int userId) {
+        // 清理缓存
+        String redisKey = RedisKeyUtil.getUserKey(userId);
+        redisTemplate.delete(redisKey);
+    }
+
+    // /**
+    //  * 获取某个用户的权限
+    //  *
+    //  * @param userId
+    //  * @return
+    //  */
+    // public Collection<? extends GrantedAuthority> getAuthorities(int userId) {
+    //     User user = this.findUserById(userId);
+    //     List<GrantedAuthority> list = new ArrayList<>();
+    //     list.add(new GrantedAuthority() {
+    //         @Override
+    //         public String getAuthority() {
+    //             switch (user.getType()) {
+    //                 case 1:
+    //                     return AUTHORITY_ADMIN;
+    //                 case 2:
+    //                     return AUTHORITY_MODERATOR;
+    //                 default:
+    //                     return AUTHORITY_USER;
+    //             }
+    //         }
+    //     });
+    //     return list;
+    // }
 
 }

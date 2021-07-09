@@ -10,6 +10,7 @@ public class RedisKeyUtil {
     private static final String PREFIX_USER_LIKE = "like:user"; // 用户的获赞
     private static final String PREFIX_FOLLOWER = "follower"; // 被关注(粉丝数)
     private static final String PREFIX_FOLLOWEE = "followee"; // 关注的目标
+    // 优化原有功能
     private static final String PREFIX_KAPTCHA = "kaptcha"; // 验证码
     private static final String PREFIX_TICKET = "ticket"; // 登录凭证
     private static final String PREFIX_USER = "user"; // 登录凭证
@@ -61,7 +62,7 @@ public class RedisKeyUtil {
      }
 
     /**
-     * 登录验证码（指定这个验证码是针对哪个用户的）
+     * 登录验证码, 指定这个验证码是针对哪个用户的
      * @param owner 用户进入登录页面的时候，由于此时用户还未登录，无法通过 id 标识用户
      *              随机生成一个字符串，短暂的存入 cookie，使用这个字符串来标识这个用户
      * @return

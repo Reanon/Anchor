@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.*;
 
 @Mapper
 // 废弃注解
-// @Deprecated
+@Deprecated
 public interface LoginTicketMapper {
     // 注解的方式写sql
     @Insert({"insert into login_ticket(user_id,ticket,status,expired) ",
