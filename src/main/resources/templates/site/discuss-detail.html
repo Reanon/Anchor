@@ -40,6 +40,7 @@
                         发布于 <b th:text="${#dates.format(post.createTime,'yyyy-MM-dd HH:mm:ss')}">8</b>
                         <ul class="d-inline float-right">
                             <li class="d-inline ml-2">
+                                <!--贴子点赞-->
                                 <a href="javascript:;"
                                    th:onclick="|like(this, 1, ${post.id}, ${post.userId}, ${post.id});|"
                                    class="text-primary">

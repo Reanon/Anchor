@@ -31,6 +31,7 @@ public class LikeService {
             public Object execute(RedisOperations redisOperations) throws DataAccessException {
                 // 实体在 Redis 中的key
                 String entityLikeKey = RedisKeyUtil.getEntityLikeKey(entityType, entityId);
+                // 实体作者在 Redis 中的 key
                 String userLikeKey = RedisKeyUtil.getUserLikeKey(entityUserId);
 
                 // 判断用户是否已经点过赞了

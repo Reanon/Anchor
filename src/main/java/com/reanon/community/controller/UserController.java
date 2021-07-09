@@ -46,17 +46,17 @@ public class UserController implements CommunityConstant {
     @Autowired
     private HostHolder hostHolder;
 
-    // @Autowired
-    // private LikeService likeService;
-    //
-    // @Autowired
-    // private FollowService followService;
-    //
-    // @Autowired
-    // private DiscussPostService discussPostService;
-    //
-    // @Autowired
-    // private CommentService commentService;
+    @Autowired
+    private LikeService likeService;
+
+    @Autowired
+    private FollowService followService;
+
+    @Autowired
+    private DiscussPostService discussPostService;
+
+    @Autowired
+    private CommentService commentService;
 
     // 网站域名
     @Value("${community.path.domain}")
@@ -229,40 +229,42 @@ public class UserController implements CommunityConstant {
     //     return "redirect:/index";
     // }
     //
-    // /**
-    //  * 进入个人主页
-    //  * @param userId 可以进入任意用户的个人主页
-    //  * @param model
-    //  * @return
-    //  */
-    // @GetMapping("/profile/{userId}")
-    // public String getProfilePage(@PathVariable("userId") int userId, Model model) {
-    //     User user = userService.findUserById(userId);
-    //     if (user == null) {
-    //         throw new RuntimeException("该用户不存在");
-    //     }
-    //
-    //     // 用户
-    //     model.addAttribute("user", user);
-    //     // 获赞数量
-    //     int userLikeCount = likeService.findUserLikeCount(userId);
-    //     model.addAttribute("userLikeCount", userLikeCount);
-    //     // 关注数量
-    //     long followeeCount = followService.findFolloweeCount(userId, ENTITY_TYPE_USER);
-    //     model.addAttribute("followeeCount", followeeCount);
-    //     // 粉丝数量
-    //     long followerCount = followService.findFollowerCount(ENTITY_TYPE_USER, userId);
-    //     model.addAttribute("followerCount", followerCount);
-    //     // 当前登录用户是否已关注该用户
-    //     boolean hasFollowed = false;
-    //     if (hostHolder.getUser() != null) {
-    //         hasFollowed = followService.hasFollowed(hostHolder.getUser().getId(), ENTITY_TYPE_USER, userId);
-    //     }
-    //     model.addAttribute("hasFollowed", hasFollowed);
-    //     model.addAttribute("tab", "profile"); // 该字段用于指示标签栏高亮
-    //
-    //     return "/site/profile";
-    // }
+
+    /**
+     * 进入个人主页
+     *
+     * @param userId 可以进入任意用户的个人主页
+     * @param model
+     * @return
+     */
+    @GetMapping("/profile/{userId}")
+    public String getProfilePage(@PathVariable("userId") int userId, Model model) {
+        User user = userService.findUserById(userId);
+        if (user == null) {
+            throw new RuntimeException("该用户不存在");
+        }
+
+        // 用户
+        model.addAttribute("user", user);
+        // 获赞数量
+        int userLikeCount = likeService.findUserLikeCount(userId);
+        model.addAttribute("userLikeCount", userLikeCount);
+        // 关注数量
+        long followeeCount = followService.findFolloweeCount(userId, ENTITY_TYPE_USER);
+        model.addAttribute("followeeCount", followeeCount);
+        // 粉丝数量
+        long followerCount = followService.findFollowerCount(ENTITY_TYPE_USER, userId);
+        model.addAttribute("followerCount", followerCount);
+        // 当前登录用户是否已关注该用户
+        boolean hasFollowed = false;
+        if (hostHolder.getUser() != null) {
+            hasFollowed = followService.hasFollowed(hostHolder.getUser().getId(), ENTITY_TYPE_USER, userId);
+        }
+        model.addAttribute("hasFollowed", hasFollowed);
+        model.addAttribute("tab", "profile"); // 该字段用于指示标签栏高亮
+
+        return "/site/profile";
+    }
     //
     // /**
     //  * 进入我的帖子（查询某个用户的帖子列表）
