@@ -1,0 +1,862 @@
+2021-07-04 09:11:42,381 INFO [main] c.r.c.SensitiveTests [StartupInfoLogger.java:55] Starting SensitiveTests using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 19232 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 09:11:42,414 INFO [main] c.r.c.SensitiveTests [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 09:11:45,212 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 09:11:45,668 INFO [main] c.r.c.SensitiveTests [StartupInfoLogger.java:61] Started SensitiveTests in 3.782 seconds (JVM running for 5.394)
+2021-07-04 09:12:24,000 INFO [main] c.r.c.SensitiveTests [StartupInfoLogger.java:55] Starting SensitiveTests using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 9048 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 09:12:24,011 INFO [main] c.r.c.SensitiveTests [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 09:12:26,599 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 09:12:26,943 INFO [main] c.r.c.SensitiveTests [StartupInfoLogger.java:61] Started SensitiveTests in 3.724 seconds (JVM running for 4.995)
+2021-07-04 09:12:44,979 INFO [main] c.r.c.SensitiveTests [StartupInfoLogger.java:55] Starting SensitiveTests using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 12920 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 09:12:44,981 INFO [main] c.r.c.SensitiveTests [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 09:12:47,200 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 09:12:47,520 INFO [main] c.r.c.SensitiveTests [StartupInfoLogger.java:61] Started SensitiveTests in 3.15 seconds (JVM running for 4.665)
+2021-07-04 09:14:28,701 INFO [main] c.r.c.SensitiveTests [StartupInfoLogger.java:55] Starting SensitiveTests using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 11616 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 09:14:28,704 INFO [main] c.r.c.SensitiveTests [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 09:14:32,630 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 09:14:33,259 INFO [main] c.r.c.SensitiveTests [StartupInfoLogger.java:61] Started SensitiveTests in 5.437 seconds (JVM running for 7.627)
+2021-07-04 09:35:23,056 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 17768 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 09:35:23,060 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 09:35:23,118 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 09:35:23,119 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 09:35:24,539 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 09:35:24,546 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 09:35:24,547 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 09:35:24,547 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 09:35:24,613 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 09:35:24,613 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 1493 ms
+2021-07-04 09:35:25,203 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 09:35:25,350 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 09:35:25,368 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 09:35:25,380 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 09:35:25,389 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 3.056 seconds (JVM running for 4.093)
+2021-07-04 09:35:39,064 INFO [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 09:35:39,064 INFO [http-nio-8080-exec-4] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 09:35:39,069 INFO [http-nio-8080-exec-4] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 4 ms
+2021-07-04 09:54:06,781 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 09:54:26,122 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 13076 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 09:54:26,125 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 09:54:26,177 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 09:54:26,178 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 09:54:27,759 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 09:54:27,779 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 09:54:27,781 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 09:54:27,782 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 09:54:27,855 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 09:54:27,855 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 1676 ms
+2021-07-04 09:54:28,210 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Stopping service [Tomcat]
+2021-07-04 09:54:28,221 INFO [restartedMain] o.s.b.a.l.ConditionEvaluationReportLoggingListener [ConditionEvaluationReportLoggingListener.java:136] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-04 09:55:16,346 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 20868 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 09:55:16,350 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 09:55:16,404 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 09:55:16,405 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 09:55:17,341 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 09:55:17,348 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 09:55:17,349 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 09:55:17,349 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 09:55:17,404 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 09:55:17,404 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 998 ms
+2021-07-04 09:55:17,898 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 09:55:18,031 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 09:55:18,046 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 09:55:18,057 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 09:55:18,067 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 2.242 seconds (JVM running for 3.206)
+2021-07-04 09:55:23,458 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 09:55:23,458 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 09:55:23,459 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 09:55:23,524 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 09:56:48,068 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 7528 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 09:56:48,073 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 09:56:48,124 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 09:56:48,124 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 09:56:49,364 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 09:56:49,371 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 09:56:49,372 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 09:56:49,372 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 09:56:49,437 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 09:56:49,437 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 1312 ms
+2021-07-04 09:56:50,064 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 09:56:50,192 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 09:56:50,206 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 09:56:50,218 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 09:56:50,228 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 2.627 seconds (JVM running for 3.743)
+2021-07-04 09:56:58,909 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 09:56:58,909 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 09:56:58,911 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 2 ms
+2021-07-04 09:56:58,971 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 09:56:59,117 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 10:06:09,800 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 7784 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:06:09,805 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:06:09,851 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 10:06:09,851 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 10:06:10,975 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:06:10,982 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:06:10,983 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:06:10,983 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:06:11,037 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:06:11,037 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 1185 ms
+2021-07-04 10:06:11,597 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:06:11,731 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:06:11,746 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:06:11,759 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:06:11,771 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 2.455 seconds (JVM running for 3.707)
+2021-07-04 10:06:17,146 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:06:17,146 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:06:17,147 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 10:06:17,239 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 10:06:17,409 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 10:28:12,959 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 19888 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:28:12,963 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:28:13,008 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 10:28:13,008 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 10:28:14,133 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:28:14,147 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:28:14,148 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:28:14,148 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:28:14,197 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:28:14,197 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 1188 ms
+2021-07-04 10:28:14,732 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:28:14,868 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:28:14,884 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:28:14,901 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:28:14,911 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 2.483 seconds (JVM running for 3.924)
+2021-07-04 10:28:25,962 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:28:25,963 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:28:25,964 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 10:28:25,990 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 10:28:26,136 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 10:31:36,144 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 12776 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:31:36,147 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:31:36,200 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 10:31:36,201 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 10:31:37,115 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:31:37,122 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:31:37,122 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:31:37,122 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:31:37,186 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:31:37,186 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 984 ms
+2021-07-04 10:31:37,662 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:31:37,783 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:31:37,797 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:31:37,809 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:31:37,818 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 2.134 seconds (JVM running for 3.259)
+2021-07-04 10:33:56,768 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:33:56,769 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:33:56,770 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 10:33:56,793 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 10:33:56,927 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 10:34:44,962 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 20216 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:34:44,965 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:34:45,015 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 10:34:45,015 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 10:34:46,026 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:34:46,035 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:34:46,036 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:34:46,036 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:34:46,099 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:34:46,100 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 1084 ms
+2021-07-04 10:34:46,713 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:34:46,857 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:34:46,873 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:34:46,887 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:34:46,897 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 2.387 seconds (JVM running for 4.743)
+2021-07-04 10:34:51,146 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:34:51,146 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:34:51,147 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 10:34:51,177 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 10:34:51,331 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 10:37:44,021 INFO [Thread-11] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2021-07-04 10:37:44,027 INFO [Thread-11] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2021-07-04 10:37:44,206 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 20216 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:37:44,207 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:37:44,545 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:37:44,546 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:37:44,546 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:37:44,546 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:37:44,568 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:37:44,568 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 359 ms
+2021-07-04 10:37:44,743 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:37:44,783 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:37:44,792 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:37:44,795 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:37:44,799 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.633 seconds (JVM running for 182.645)
+2021-07-04 10:37:44,800 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 10:37:48,798 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:37:48,802 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:37:48,806 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 4 ms
+2021-07-04 10:37:48,818 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2021-07-04 10:37:48,833 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2021-07-04 10:40:17,471 INFO [SpringContextShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2021-07-04 10:40:17,475 INFO [SpringContextShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2021-07-04 10:40:21,370 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 5924 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:40:21,374 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:40:21,452 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 10:40:21,453 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 10:40:22,492 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:40:22,508 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:40:22,509 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:40:22,509 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:40:22,562 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:40:22,562 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 1108 ms
+2021-07-04 10:40:23,055 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:40:23,184 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:40:23,199 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:40:23,211 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:40:23,220 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 2.713 seconds (JVM running for 4.902)
+2021-07-04 10:40:26,656 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:40:26,657 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:40:26,658 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 10:40:26,684 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 10:40:26,820 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 10:50:05,357 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 10064 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:50:05,359 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:50:05,401 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 10:50:05,401 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 10:50:06,371 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:50:06,385 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:50:06,386 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:50:06,386 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:50:06,442 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:50:06,443 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 1041 ms
+2021-07-04 10:50:06,906 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:50:07,027 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:50:07,047 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:50:07,059 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:50:07,068 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 2.267 seconds (JVM running for 3.603)
+2021-07-04 10:50:21,762 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:50:21,762 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:50:21,764 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 0 ms
+2021-07-04 10:50:21,787 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 10:50:21,919 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 10:52:27,320 INFO [Thread-10] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2021-07-04 10:52:27,325 INFO [Thread-10] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2021-07-04 10:52:27,482 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 10064 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:52:27,483 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:52:27,807 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:52:27,808 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:52:27,809 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:52:27,809 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:52:27,828 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:52:27,829 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 344 ms
+2021-07-04 10:52:27,998 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:52:28,042 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:52:28,052 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:52:28,054 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:52:28,059 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.615 seconds (JVM running for 144.594)
+2021-07-04 10:52:28,062 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 10:52:29,083 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:52:29,084 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:52:29,085 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 10:52:29,086 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2021-07-04 10:52:29,090 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2021-07-04 10:52:46,792 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 20864 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:52:46,796 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:52:46,840 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 10:52:46,840 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 10:52:47,721 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:52:47,727 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:52:47,728 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:52:47,728 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:52:47,787 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:52:47,787 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 946 ms
+2021-07-04 10:52:48,275 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:52:48,415 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:52:48,429 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:52:48,441 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:52:48,451 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 2.12 seconds (JVM running for 3.039)
+2021-07-04 10:52:58,516 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:52:58,517 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:52:58,518 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 10:52:58,539 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 10:52:58,669 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 10:53:59,139 INFO [Thread-9] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2021-07-04 10:53:59,144 INFO [Thread-9] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2021-07-04 10:53:59,323 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 20864 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:53:59,324 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:53:59,639 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:53:59,641 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:53:59,656 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:53:59,658 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:53:59,714 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:53:59,714 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 387 ms
+2021-07-04 10:53:59,887 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:53:59,920 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:53:59,931 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:53:59,934 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:53:59,939 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.658 seconds (JVM running for 74.527)
+2021-07-04 10:53:59,940 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 10:54:01,848 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 20864 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:54:01,849 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:54:02,105 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:54:02,106 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:54:02,106 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:54:02,107 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:54:02,120 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:54:02,120 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 268 ms
+2021-07-04 10:54:02,279 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:54:02,325 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:54:02,334 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:54:02,339 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:54:02,344 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.533 seconds (JVM running for 76.932)
+2021-07-04 10:54:02,345 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 10:54:13,793 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:54:13,795 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:54:13,797 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 10:54:13,808 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2021-07-04 10:54:13,813 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2021-07-04 10:54:28,595 INFO [Thread-19] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2021-07-04 10:54:28,598 INFO [Thread-19] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2021-07-04 10:54:28,752 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 20864 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:54:28,753 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:54:28,938 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:54:28,939 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:54:28,939 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:54:28,939 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:54:28,952 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:54:28,952 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 197 ms
+2021-07-04 10:54:29,063 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:54:29,093 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:54:29,101 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:54:29,103 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:54:29,107 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.388 seconds (JVM running for 103.696)
+2021-07-04 10:54:29,109 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 10:54:30,002 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:54:30,003 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:54:30,004 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 10:54:30,006 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-3 - Starting...
+2021-07-04 10:54:30,010 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-3 - Start completed.
+2021-07-04 10:54:30,879 INFO [Thread-23] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-3 - Shutdown initiated...
+2021-07-04 10:54:30,882 INFO [Thread-23] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-3 - Shutdown completed.
+2021-07-04 10:54:31,032 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 20864 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:54:31,032 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:54:31,195 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:54:31,195 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:54:31,196 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:54:31,196 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:54:31,206 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:54:31,206 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 172 ms
+2021-07-04 10:54:31,301 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:54:31,323 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:54:31,329 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:54:31,331 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:54:31,334 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.325 seconds (JVM running for 105.923)
+2021-07-04 10:54:31,335 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 10:54:59,689 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:54:59,690 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:54:59,692 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 10:54:59,694 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-4 - Starting...
+2021-07-04 10:54:59,697 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-4 - Start completed.
+2021-07-04 10:56:00,452 INFO [Thread-27] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-4 - Shutdown initiated...
+2021-07-04 10:56:00,456 INFO [Thread-27] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-4 - Shutdown completed.
+2021-07-04 10:56:00,572 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 20864 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:56:00,572 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:56:00,850 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:56:00,851 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:56:00,851 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:56:00,851 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:56:00,861 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:56:00,861 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 287 ms
+2021-07-04 10:56:00,963 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:56:00,990 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:56:00,996 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:56:00,998 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:56:01,002 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.461 seconds (JVM running for 195.59)
+2021-07-04 10:56:01,003 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 10:56:02,857 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 20864 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:56:02,858 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:56:03,047 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:56:03,048 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:56:03,049 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:56:03,049 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:56:03,059 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:56:03,060 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 201 ms
+2021-07-04 10:56:03,158 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:56:03,185 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:56:03,191 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:56:03,193 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:56:03,196 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.361 seconds (JVM running for 197.785)
+2021-07-04 10:56:03,198 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 10:56:03,595 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:56:03,597 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:56:03,599 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 2 ms
+2021-07-04 10:56:03,602 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-5 - Starting...
+2021-07-04 10:56:03,606 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-5 - Start completed.
+2021-07-04 10:56:27,036 INFO [Thread-35] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-5 - Shutdown initiated...
+2021-07-04 10:56:27,041 INFO [Thread-35] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-5 - Shutdown completed.
+2021-07-04 10:56:27,151 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 20864 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:56:27,152 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:56:27,433 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:56:27,434 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:56:27,434 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:56:27,434 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:56:27,444 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:56:27,444 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 291 ms
+2021-07-04 10:56:27,542 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:56:27,570 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:56:27,576 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:56:27,578 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:56:27,582 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.453 seconds (JVM running for 222.17)
+2021-07-04 10:56:27,583 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 10:56:27,920 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:56:27,922 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:56:27,923 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 10:56:27,925 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-6 - Starting...
+2021-07-04 10:56:27,927 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-6 - Start completed.
+2021-07-04 10:57:46,861 INFO [Thread-39] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-6 - Shutdown initiated...
+2021-07-04 10:57:46,867 INFO [Thread-39] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-6 - Shutdown completed.
+2021-07-04 10:57:47,075 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 20864 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:57:47,076 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:57:47,244 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:57:47,244 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:57:47,244 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:57:47,245 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:57:47,254 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:57:47,254 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 177 ms
+2021-07-04 10:57:47,356 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:57:47,383 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:57:47,390 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:57:47,392 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:57:47,395 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.341 seconds (JVM running for 301.983)
+2021-07-04 10:57:47,396 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 10:57:48,646 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:57:48,647 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:57:48,648 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 10:57:48,649 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-7 - Starting...
+2021-07-04 10:57:48,654 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-7 - Start completed.
+2021-07-04 10:57:49,271 INFO [Thread-44] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-7 - Shutdown initiated...
+2021-07-04 10:57:49,276 INFO [Thread-44] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-7 - Shutdown completed.
+2021-07-04 10:57:49,436 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 20864 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:57:49,436 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:57:49,635 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:57:49,635 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:57:49,635 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:57:49,635 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:57:49,646 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:57:49,647 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 209 ms
+2021-07-04 10:57:49,753 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:57:49,780 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:57:49,787 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:57:49,789 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:57:49,793 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.38 seconds (JVM running for 304.381)
+2021-07-04 10:57:49,794 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 10:57:49,836 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:57:49,837 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:57:49,838 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 10:59:02,891 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 20864 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:59:02,891 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:59:03,230 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:59:03,230 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:59:03,230 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:59:03,230 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:59:03,241 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:59:03,241 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 348 ms
+2021-07-04 10:59:03,354 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:59:03,382 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:59:03,390 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:59:03,392 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:59:03,395 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.538 seconds (JVM running for 377.984)
+2021-07-04 10:59:03,396 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 10:59:05,300 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 20864 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 10:59:05,300 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 10:59:05,470 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 10:59:05,471 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:59:05,471 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 10:59:05,471 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 10:59:05,480 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 10:59:05,481 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 180 ms
+2021-07-04 10:59:05,570 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 10:59:05,593 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 10:59:05,599 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 10:59:05,602 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 10:59:05,605 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.327 seconds (JVM running for 380.194)
+2021-07-04 10:59:05,606 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 10:59:06,761 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 10:59:06,762 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 10:59:06,764 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 10:59:06,768 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-8 - Starting...
+2021-07-04 10:59:06,773 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-8 - Start completed.
+2021-07-04 11:01:52,269 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 21280 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 11:01:52,273 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 11:01:52,332 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 11:01:52,332 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 11:01:54,188 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 11:01:54,213 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 11:01:54,214 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 11:01:54,214 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 11:01:54,291 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 11:01:54,292 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 1957 ms
+2021-07-04 11:01:55,091 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 11:01:55,311 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 11:01:55,338 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 11:01:55,361 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 11:01:55,377 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 3.783 seconds (JVM running for 5.96)
+2021-07-04 11:02:18,532 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 11:02:18,533 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 11:02:18,535 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 2 ms
+2021-07-04 11:02:18,567 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 11:02:18,719 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 11:02:43,115 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 11648 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 11:02:43,119 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 11:02:43,178 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 11:02:43,179 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 11:02:44,274 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 11:02:44,281 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 11:02:44,282 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 11:02:44,282 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 11:02:44,343 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 11:02:44,344 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 1164 ms
+2021-07-04 11:02:44,907 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 11:02:45,044 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 11:02:45,060 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 11:02:45,073 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 11:02:45,082 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 2.547 seconds (JVM running for 3.717)
+2021-07-04 11:04:06,989 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 11:04:06,989 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 11:04:06,990 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 11:04:07,018 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 11:04:07,171 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 11:12:35,286 INFO [Thread-11] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2021-07-04 11:12:35,290 INFO [Thread-11] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2021-07-04 11:12:35,462 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 11648 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 11:12:35,463 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 11:12:35,890 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 11:12:35,891 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 11:12:35,891 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 11:12:35,891 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 11:12:35,910 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 11:12:35,913 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 447 ms
+2021-07-04 11:12:36,089 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 11:12:36,133 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 11:12:36,143 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 11:12:36,145 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 11:12:36,150 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.737 seconds (JVM running for 594.785)
+2021-07-04 11:12:36,152 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 11:12:44,923 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 11:12:44,924 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 11:12:44,926 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 2 ms
+2021-07-04 11:12:44,929 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2021-07-04 11:12:44,934 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2021-07-04 15:23:44,328 INFO [Thread-17] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2021-07-04 15:23:44,333 INFO [Thread-17] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2021-07-04 15:23:44,583 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 11648 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 15:23:44,583 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 15:23:47,322 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 11648 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 15:23:47,322 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 15:23:47,752 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 15:23:47,754 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 15:23:47,756 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 15:23:47,756 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 15:23:47,775 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 15:23:47,776 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 451 ms
+2021-07-04 15:23:48,060 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 15:23:48,161 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 15:23:48,210 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 15:23:48,217 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 15:23:48,228 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.957 seconds (JVM running for 15665.612)
+2021-07-04 15:23:48,231 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 15:23:56,318 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 17588 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 15:23:56,323 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 15:23:56,467 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 15:23:56,467 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 15:23:58,023 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 15:23:58,042 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 15:23:58,043 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 15:23:58,044 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 15:23:58,117 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 15:23:58,118 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 1649 ms
+2021-07-04 15:23:58,898 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 15:23:59,128 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 15:23:59,148 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 15:23:59,164 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 15:23:59,175 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 4.161 seconds (JVM running for 7.003)
+2021-07-04 15:24:08,047 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 15:24:08,047 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 15:24:08,048 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 0 ms
+2021-07-04 15:24:08,082 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 15:24:08,240 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 15:49:21,526 INFO [Thread-11] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2021-07-04 15:49:21,543 INFO [Thread-11] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2021-07-04 15:49:21,756 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 17588 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 15:49:21,756 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 15:49:22,143 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 15:49:22,145 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 15:49:22,146 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 15:49:22,146 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 15:49:22,163 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 15:49:22,164 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 405 ms
+2021-07-04 15:49:22,399 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 15:49:22,480 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 15:49:22,524 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 15:49:22,536 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 15:49:22,560 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.855 seconds (JVM running for 1530.387)
+2021-07-04 15:49:22,592 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 15:49:24,650 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 17588 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 15:49:24,651 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 15:49:24,986 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 15:49:24,986 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 15:49:24,987 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 15:49:24,987 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 15:49:25,000 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 15:49:25,000 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 346 ms
+2021-07-04 15:49:25,186 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 15:49:25,224 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 15:49:25,231 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 15:49:25,234 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 15:49:25,237 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.64 seconds (JVM running for 1533.065)
+2021-07-04 15:49:25,239 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 15:50:48,711 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 15:50:48,714 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 15:50:48,722 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 6 ms
+2021-07-04 15:50:48,725 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2021-07-04 15:50:48,738 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2021-07-04 16:02:51,183 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 17348 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 16:02:51,188 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 16:02:51,245 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 16:02:51,246 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 16:02:52,289 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 16:02:52,303 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 16:02:52,304 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 16:02:52,305 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 16:02:52,360 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 16:02:52,361 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 1114 ms
+2021-07-04 16:02:52,978 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 16:02:53,128 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 16:02:53,150 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 16:02:53,166 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 16:02:53,179 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 2.627 seconds (JVM running for 4.833)
+2021-07-04 16:02:59,211 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 16:02:59,211 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 16:02:59,213 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 16:02:59,244 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 16:02:59,453 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 16:04:08,502 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 16100 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 16:04:08,507 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 16:04:08,589 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 16:04:08,590 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 16:04:10,578 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 16:04:10,687 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 16:04:10,688 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 16:04:10,689 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 16:04:10,843 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 16:04:10,844 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 2249 ms
+2021-07-04 16:04:12,059 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 16:04:12,288 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 16:04:12,311 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 16:04:12,333 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 16:04:12,344 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 4.748 seconds (JVM running for 6.875)
+2021-07-04 16:04:21,591 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 16:04:21,592 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 16:04:21,593 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 16:04:21,623 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 16:04:21,813 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 16:06:23,629 INFO [Thread-13] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2021-07-04 16:06:23,635 INFO [Thread-13] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2021-07-04 16:06:23,846 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 16100 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 16:06:23,846 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 16:06:24,275 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 16:06:24,276 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 16:06:24,276 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 16:06:24,277 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 16:06:24,297 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 16:06:24,298 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 449 ms
+2021-07-04 16:06:24,645 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 16:06:24,768 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 16:06:24,791 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 16:06:24,796 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 16:06:24,801 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 1.007 seconds (JVM running for 139.331)
+2021-07-04 16:06:24,803 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 16:06:27,002 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 16100 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 16:06:27,002 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 16:06:27,243 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 16:06:27,244 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 16:06:27,244 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 16:06:27,244 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 16:06:27,256 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 16:06:27,256 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 251 ms
+2021-07-04 16:06:27,469 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 16:06:27,517 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 16:06:27,526 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 16:06:27,529 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 16:06:27,532 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.583 seconds (JVM running for 142.063)
+2021-07-04 16:06:27,534 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 16:06:37,922 INFO [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 16:06:37,923 INFO [http-nio-8080-exec-3] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 16:06:37,927 INFO [http-nio-8080-exec-3] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 4 ms
+2021-07-04 16:06:37,929 INFO [http-nio-8080-exec-3] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2021-07-04 16:06:37,933 INFO [http-nio-8080-exec-3] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2021-07-04 16:13:22,508 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 7528 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 16:13:22,512 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 16:13:22,578 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-04 16:13:22,579 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:255] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-04 16:13:23,771 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 16:13:23,786 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 16:13:23,787 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 16:13:23,787 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 16:13:23,840 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 16:13:23,840 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 1260 ms
+2021-07-04 16:13:24,438 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 16:13:24,591 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 16:13:24,611 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 16:13:24,629 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 16:13:24,645 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 2.851 seconds (JVM running for 4.485)
+2021-07-04 16:15:28,571 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 16:15:28,571 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 16:15:28,573 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 16:15:28,603 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 16:15:28,811 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 16:20:18,317 INFO [Thread-11] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2021-07-04 16:20:18,322 INFO [Thread-11] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2021-07-04 16:20:18,496 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 7528 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 16:20:18,496 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 16:20:18,832 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 16:20:18,833 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 16:20:18,834 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 16:20:18,834 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 16:20:18,855 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 16:20:18,855 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 356 ms
+2021-07-04 16:20:18,952 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 16:20:19,062 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Stopping service [Tomcat]
+2021-07-04 16:20:19,075 INFO [restartedMain] o.s.b.a.l.ConditionEvaluationReportLoggingListener [ConditionEvaluationReportLoggingListener.java:136] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-04 16:20:21,723 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 7528 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 16:20:21,723 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 16:20:22,004 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 16:20:22,005 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 16:20:22,005 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 16:20:22,005 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 16:20:22,021 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 16:20:22,021 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 294 ms
+2021-07-04 16:20:22,291 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 16:20:22,359 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 16:20:22,374 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 16:20:22,377 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 16:20:22,382 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.693 seconds (JVM running for 422.222)
+2021-07-04 16:20:22,384 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 16:20:29,042 INFO [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 16:20:29,043 INFO [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 16:20:29,045 INFO [http-nio-8080-exec-2] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 16:20:29,047 INFO [http-nio-8080-exec-2] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2021-07-04 16:20:29,053 INFO [http-nio-8080-exec-2] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2021-07-04 17:02:50,764 INFO [Thread-18] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2021-07-04 17:02:50,767 INFO [Thread-18] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2021-07-04 17:02:50,954 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 7528 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 17:02:50,954 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 17:02:51,262 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 17:02:51,263 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 17:02:51,263 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 17:02:51,263 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 17:02:51,278 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 17:02:51,279 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 323 ms
+2021-07-04 17:02:51,362 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Stopping service [Tomcat]
+2021-07-04 17:02:51,369 INFO [restartedMain] o.s.b.a.l.ConditionEvaluationReportLoggingListener [ConditionEvaluationReportLoggingListener.java:136] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-04 17:02:52,916 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 7528 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 17:02:52,917 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 17:02:53,086 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 17:02:53,086 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 17:02:53,087 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 17:02:53,087 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 17:02:53,096 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 17:02:53,096 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 178 ms
+2021-07-04 17:02:53,214 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 17:02:53,254 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 17:02:53,264 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 17:02:53,267 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 17:02:53,270 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.379 seconds (JVM running for 2973.11)
+2021-07-04 17:02:53,273 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 17:02:55,367 INFO [main] c.r.c.MapperTest [StartupInfoLogger.java:55] Starting MapperTest using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 23508 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 17:02:55,369 INFO [main] c.r.c.MapperTest [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 17:02:57,855 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 17:02:58,631 INFO [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:86] 
+
+Using generated security password: 66e7171d-100d-4573-bd3a-b1feeafad7d1
+
+2021-07-04 17:02:58,951 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:51] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40729f01, org.springframework.security.web.context.SecurityContextPersistenceFilter@77f905e3, org.springframework.security.web.header.HeaderWriterFilter@dd2856e, org.springframework.security.web.csrf.CsrfFilter@2a39aa2b, org.springframework.security.web.authentication.logout.LogoutFilter@421def93, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1756f7cc, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@2b2954e1, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@d535a3d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@756aadfc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@338766de, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@31142d58, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2d760326, org.springframework.security.web.session.SessionManagementFilter@3b1dc579, org.springframework.security.web.access.ExceptionTranslationFilter@4694f434, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@bc6288b]
+2021-07-04 17:02:59,124 INFO [main] c.r.c.MapperTest [StartupInfoLogger.java:61] Started MapperTest in 4.414 seconds (JVM running for 5.843)
+2021-07-04 17:02:59,563 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 17:02:59,981 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 17:03:00,133 INFO [SpringContextShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2021-07-04 17:03:00,144 INFO [SpringContextShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2021-07-04 17:04:27,577 INFO [main] c.r.c.MapperTest [StartupInfoLogger.java:55] Starting MapperTest using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 22332 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 17:04:27,579 INFO [main] c.r.c.MapperTest [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 17:04:30,784 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 17:04:31,524 INFO [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:86] 
+
+Using generated security password: 19172246-e592-41a0-98bd-4820c88c2079
+
+2021-07-04 17:04:31,879 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:51] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@b46e103, org.springframework.security.web.context.SecurityContextPersistenceFilter@2676dc05, org.springframework.security.web.header.HeaderWriterFilter@7e9f2c32, org.springframework.security.web.csrf.CsrfFilter@47311277, org.springframework.security.web.authentication.logout.LogoutFilter@3134153d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@bc6288b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5f5effb0, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2b0e9f30, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3138953b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4833eff3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b1dc579, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5eea5627, org.springframework.security.web.session.SessionManagementFilter@5d4e13e1, org.springframework.security.web.access.ExceptionTranslationFilter@70c69586, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@75babb67]
+2021-07-04 17:04:32,045 INFO [main] c.r.c.MapperTest [StartupInfoLogger.java:61] Started MapperTest in 5.12 seconds (JVM running for 6.609)
+2021-07-04 17:04:32,356 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 17:04:32,653 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 17:04:32,732 INFO [SpringContextShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2021-07-04 17:04:32,737 INFO [SpringContextShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2021-07-04 17:07:56,827 INFO [main] c.r.c.MapperTest [StartupInfoLogger.java:55] Starting MapperTest using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 16400 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 17:07:56,830 INFO [main] c.r.c.MapperTest [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 17:08:00,660 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 17:08:01,599 INFO [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [UserDetailsServiceAutoConfiguration.java:86] 
+
+Using generated security password: 5c37074f-0d30-48e1-b806-55adc56c9ecd
+
+2021-07-04 17:08:02,181 INFO [main] o.s.s.w.DefaultSecurityFilterChain [DefaultSecurityFilterChain.java:51] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@b46e103, org.springframework.security.web.context.SecurityContextPersistenceFilter@2676dc05, org.springframework.security.web.header.HeaderWriterFilter@7e9f2c32, org.springframework.security.web.csrf.CsrfFilter@47311277, org.springframework.security.web.authentication.logout.LogoutFilter@3134153d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@bc6288b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5f5effb0, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2b0e9f30, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3138953b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4833eff3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b1dc579, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5eea5627, org.springframework.security.web.session.SessionManagementFilter@5d4e13e1, org.springframework.security.web.access.ExceptionTranslationFilter@70c69586, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@75babb67]
+2021-07-04 17:08:02,427 INFO [main] c.r.c.MapperTest [StartupInfoLogger.java:61] Started MapperTest in 6.452 seconds (JVM running for 8.611)
+2021-07-04 17:08:02,741 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2021-07-04 17:08:03,177 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2021-07-04 17:08:03,342 INFO [SpringContextShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2021-07-04 17:08:03,355 INFO [SpringContextShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2021-07-04 18:17:35,441 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 7528 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 18:17:35,441 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 18:17:35,729 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 18:17:35,730 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 18:17:35,730 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 18:17:35,730 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 18:17:35,740 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 18:17:35,740 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 295 ms
+2021-07-04 18:17:35,889 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 18:17:35,927 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 18:17:35,934 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 18:17:35,936 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 18:17:35,940 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.552 seconds (JVM running for 7455.78)
+2021-07-04 18:17:35,941 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 18:17:37,784 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 18:17:37,785 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 18:17:37,786 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 18:17:37,788 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-3 - Starting...
+2021-07-04 18:17:37,798 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-3 - Start completed.
+2021-07-04 18:18:08,870 INFO [Thread-32] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-3 - Shutdown initiated...
+2021-07-04 18:18:08,878 INFO [Thread-32] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-3 - Shutdown completed.
+2021-07-04 18:18:09,117 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 7528 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 18:18:09,117 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 18:18:09,363 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 18:18:09,364 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 18:18:09,364 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 18:18:09,364 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 18:18:09,376 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 18:18:09,376 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 257 ms
+2021-07-04 18:18:09,503 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 18:18:09,567 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 18:18:09,582 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 18:18:09,585 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 18:18:09,591 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.507 seconds (JVM running for 7489.431)
+2021-07-04 18:18:09,593 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 18:18:11,484 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 7528 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-04 18:18:11,484 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-04 18:18:11,658 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-04 18:18:11,659 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-04 18:18:11,659 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-04 18:18:11,659 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-04 18:18:11,670 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-04 18:18:11,671 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 185 ms
+2021-07-04 18:18:11,805 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-04 18:18:11,837 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:58] LiveReload server is running on port 35729
+2021-07-04 18:18:11,843 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2021-07-04 18:18:11,845 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path '/anchor'
+2021-07-04 18:18:11,849 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:61] Started AnchorApplication in 0.39 seconds (JVM running for 7491.689)
+2021-07-04 18:18:11,850 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:63] Condition evaluation unchanged
+2021-07-04 18:18:11,891 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-04 18:18:11,892 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2021-07-04 18:18:11,897 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2021-07-04 18:18:11,899 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-4 - Starting...
+2021-07-04 18:18:11,902 INFO [http-nio-8080-exec-1] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-4 - Start completed.

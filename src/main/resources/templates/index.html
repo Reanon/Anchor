@@ -34,7 +34,8 @@
                         <li class="nav-item ml-3 btn-group-vertical" th:if="${loginUser != null}">
                             <a class="nav-link position-relative" th:href="@{/letter/list}">
                                 <i class="bi bi-envelope"></i> 消息
-                                <span class="badge badge-danger">12</span>
+                                <span class="badge badge-danger"
+                                      th:text="${allUnreadCount!=0?allUnreadCount:''}">12</span>
                             </a>
                         </li>
                         <li class="nav-item ml-3 btn-group-vertical" th:if="${loginUser==null}">
@@ -63,9 +64,12 @@
                         </li>
                     </ul>
                     <!-- 搜索 -->
-                    <form class="form-inline my-2 my-lg-0" action="site/search.html">
-                        <input class="form-control mr-sm-2" type="search" aria-label="Search"/>
-                        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">搜索</button>
+                    <form class="form-inline my-2 my-lg-0" method="get" th:action="@{/search}">
+                        <input class="form-control mr-sm-2" type="search" name="keyword" th:value="${keyword}"
+                               aria-label="Search"/>
+                        <button class="btn btn-outline-light my-2 my-sm-0 serach-btn" type="submit"><i
+                                class="bi bi-search"></i> 搜索
+                        </button>
                     </form>
                 </div>
             </nav>
@@ -86,8 +90,16 @@
                     </li>
                 </ul>
                 <button type="button" class="btn btn-primary btn-sm position-absolute rt-0" data-toggle="modal"
-                        data-target="#publishModal">我要发布
+                        data-target="#publishModal" th:if="${loginUser != null}">
+                    <i class="bi bi-plus-square"></i>
+                    我要发布
                 </button>
+                <!--<a th:href="@{/discuss/publish}" th:if="${loginUser != null}">-->
+                <!--    <button type="button" class="btn btn-primary btn-sm position-absolute rt-0">-->
+                <!--        <i class="bi bi-plus-square"></i> 我要发布-->
+                <!--    </button>-->
+                <!--</a>-->
+
             </div>
             <!-- 弹出框 -->
             <div class="modal fade" id="publishModal" tabindex="-1" role="dialog" aria-labelledby="publishModalLabel"
@@ -143,7 +155,7 @@
                     </a>
                     <div class="media-body">
                         <h6 class="mt-0 mb-3">
-                            <a href="#" th:utext="${map.post.title}"></a>
+                            <a href="#" th:href="@{|/discuss/detail/${map.post.id}|}" th:utext="${map.post.title}"></a>
                             <span class="badge badge-secondary bg-primary" th:if="${map.post.type==1}">置顶</span>
                             <span class="badge badge-secondary bg-danger" th:if="${map.post.status==1}">精华</span>
                         </h6>
@@ -151,16 +163,16 @@
                             <u class="mr-3" th:utext="${map.user.username}"></u> <b
                                 th:text="${#dates.format(map.post.createTime,'yyyy-MM-dd HH:mm:ss')}"></b>
                             <ul class="d-inline float-right">
-                                <li class="d-inline ml-2">赞 11</li>
+                                <!--<li class="d-inline ml-2">赞 <span th:text="${map.likeCount}"></span></li>-->
                                 <li class="d-inline ml-2">|</li>
-                                <li class="d-inline ml-2">回帖 7</li>
+                                <li class="d-inline ml-2">回帖 <span th:text="${map.post.commentCount}"></span></li>
                             </ul>
                         </div>
                     </div>
                 </li>
             </ul>
             <!-- 分页 -->
-            <nav class="mt-5" th:if="${page.rows>0}">
+            <nav class="mt-5" th:if="${page.rows>0}" th:fragment="pagination">
                 <ul class="pagination justify-content-center">
                     <li class="page-item">
                         <!--/index.html?current=1-->

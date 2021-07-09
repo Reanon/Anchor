@@ -40,6 +40,7 @@
     </select>
 
     <!--插入用户信息（注册）-->
+    <!--keyProperty的值是对象的属性值, 将自动生成的主键id返回 -->
     <insert id="insertUser" parameterType="User" keyProperty="id">
         insert into user (<include refid="insertFields"></include>)
         values(#{username}, #{password}, #{salt}, #{email}, #{type}, #{status}, #{activationCode}, #{headerUrl},

@@ -5,12 +5,13 @@ $(function(){
 
 function send_letter() {
 	$("#sendModal").modal("hide");
-
+	// 获取发送方内容和文本内容
 	var toName = $("#recipient-name").val();
 	var content = $("#message-text").val();
 	$.post(
 		CONTEXT_PATH + "/letter/send",
 		{"toName":toName, "content":content},
+		// 处理返回的结果
 		function(data) {
 			data = $.parseJSON(data);
 			if (data.code == 0) {

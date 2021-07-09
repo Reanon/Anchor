@@ -1,14 +1,14 @@
 package com.reanon.community.controller;
 
+import com.reanon.community.utils.CommunityUtil;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author reanon
@@ -67,6 +67,7 @@ public class AlphaController {
     /**
      * 获取 session
      * Session同 Map一样，可以声明并自动注入
+     *
      * @param session
      * @return
      */
@@ -76,5 +77,29 @@ public class AlphaController {
         System.out.println(session.getAttribute("id"));
         System.out.println(session.getAttribute("name"));
         return "get session";
+    }
+
+
+    /**
+     * 响应Json(Ajax)
+     * Java对象-》json字符串-》js对象
+     */
+    @PostMapping("/ajax")
+    @ResponseBody
+    public String testAjax(String name, int age) {
+        System.out.println(name);
+        System.out.println(age);
+        return CommunityUtil.getJSONString(0, "操作成功!");
+    }
+
+    /**
+     * 响应Json(Ajax)
+     * Java对象-》json字符串-》js对象
+     */
+    @GetMapping("/test")
+    public String test() {
+        return "/site/discuss-detail";
+        // return "/site/discuss-publish";
+
     }
 }

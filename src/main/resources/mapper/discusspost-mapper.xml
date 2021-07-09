@@ -53,6 +53,7 @@
         where id = #{id}
     </select>
 
+    <!--增加评论的数量-->
     <update id="updateCommentCount">
         update discuss_post
         set comment_count = #{commentCount}

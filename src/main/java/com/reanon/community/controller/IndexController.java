@@ -42,7 +42,8 @@ public class IndexController {
     /**
      * 进入首页
      * 方法调用前, SpringMVC会自动实例化Model和 Page,并将 Page 注入Model
-     *  所以,在 thymeleaf 中可以直接访问 Page 对象中的数据
+     * 所以,在 thymeleaf 中可以直接访问 Page 对象中的数据
+     *
      * @param orderMode 默认是 0（最新）
      */
     @GetMapping("/index")
@@ -74,5 +75,21 @@ public class IndexController {
         model.addAttribute("discussPosts", discussPosts);
         model.addAttribute("orderMode", orderMode);
         return "index";
+    }
+
+    /**
+     * 进入 500 错误界面
+     */
+    @GetMapping("/error")
+    public String getErrorPage() {
+        return "/error/500";
+    }
+
+    /**
+     * 没有权限访问时的错误界面（也是 404）
+     */
+    @GetMapping("/denied")
+    public String getDeniedPage() {
+        return "/error/404";
     }
 }

@@ -2,9 +2,11 @@ package com.reanon.community;
 
 import com.reanon.community.dao.DiscussPostMapper;
 import com.reanon.community.dao.LoginTicketMapper;
+import com.reanon.community.dao.MessageMapper;
 import com.reanon.community.dao.UserMapper;
 import com.reanon.community.entity.DiscussPost;
 import com.reanon.community.entity.LoginTicket;
+import com.reanon.community.entity.Message;
 import com.reanon.community.entity.User;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -30,6 +32,9 @@ public class MapperTest {
 
     @Autowired
     private DiscussPostMapper discussPostMapper;
+
+    @Autowired
+    private MessageMapper messageMapper;
 
     @Test
     @DisplayName("测试 Select 方法")
@@ -95,5 +100,24 @@ public class MapperTest {
         loginTicketMapper.updateStatus("abc", 1);
         loginTicket = loginTicketMapper.selectByTicket("abc");
         System.out.println(loginTicket);
+    }
+
+    @Test
+    public void testSelectLetters() {
+        // 查询用户111 的所有会话(只显示最新的私信)
+        List<Message> messages = messageMapper.selectConversations(111, 0, 20);
+        messages.forEach(System.out::println);
+        // 查询对话的数量
+        int count = messageMapper.selectConversationCount(111);
+        System.out.println(count);
+        // 查询会话 111_112 的所有私信
+        messages = messageMapper.selectLetters("111_112", 0, 10);
+        messages.forEach(System.out::println);
+        // 查询会话 111_113 的私信数量
+        count = messageMapper.selectLetterCount("111_113");
+        System.out.println(count);
+        // 用户 131 在 111_131 对话中的未读私信数量
+        int unreadCount = messageMapper.selectLetterUnreadCount(131, "111_131");
+        System.out.println(unreadCount);
     }
 }

@@ -29,8 +29,7 @@ public interface DiscussPostMapper {
     /**
      * 插入/添加帖子
      *
-     * @param discussPost
-     * @return
+     * @param discussPost 帖子
      */
     int insertDiscussPost(DiscussPost discussPost);
 
@@ -43,7 +42,7 @@ public interface DiscussPostMapper {
     DiscussPost selectDiscussPostById(int id);
 
     /**
-     * 修改评论数量
+     * 修改评论数量, 每次增加评论之后就需要增加
      *
      * @param id
      * @param commentCount
