@@ -138,3 +138,84 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 2021-07-09 11:04:19,777 INFO [http-nio-8080-exec-10] c.r.c.a.ServiceLogAspect [ServiceLogAspect.java:48] 用户[0:0:0:0:0:0:0:1], 在[2021-07-09 11:04:19], 访问了[com.reanon.community.service.UserService.findUserById].
 2021-07-09 11:04:19,779 INFO [http-nio-8080-exec-10] c.r.c.a.ServiceLogAspect [ServiceLogAspect.java:48] 用户[0:0:0:0:0:0:0:1], 在[2021-07-09 11:04:19], 访问了[com.reanon.community.service.MessageService.findLetterUnreadCount].
 2021-07-09 11:04:19,782 INFO [http-nio-8080-exec-10] c.r.c.a.ServiceLogAspect [ServiceLogAspect.java:48] 用户[0:0:0:0:0:0:0:1], 在[2021-07-09 11:04:19], 访问了[com.reanon.community.service.MessageService.findNoticeUnReadCount].
+2021-07-09 12:02:00,504 INFO [Thread-11] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2021-07-09 12:02:00,513 INFO [Thread-11] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2021-07-09 12:02:00,757 INFO [restartedMain] c.r.c.AnchorApplication [StartupInfoLogger.java:55] Starting AnchorApplication using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 18568 (D:\ProjectsOfCode\IdeaProjects\Anchor\target\classes started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-09 12:02:00,757 INFO [restartedMain] c.r.c.AnchorApplication [SpringApplication.java:668] The following profiles are active: develop
+2021-07-09 12:02:01,132 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2021-07-09 12:02:01,133 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2021-07-09 12:02:01,134 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2021-07-09 12:02:01,134 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-09 12:02:01,156 INFO [restartedMain] o.a.c.c.C.[.[.[/anchor] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2021-07-09 12:02:01,156 INFO [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:289] Root WebApplicationContext: initialization completed in 395 ms
+2021-07-09 12:02:01,270 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-09 12:02:11,439 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:55] Starting RedisTest using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 14028 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-09 12:02:11,442 INFO [main] c.r.c.RedisTest [SpringApplication.java:668] The following profiles are active: develop
+2021-07-09 12:02:13,065 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:250] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-09 12:02:13,072 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:128] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-09 12:02:13,129 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:188] Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
+2021-07-09 12:02:18,075 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-09 12:02:18,956 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:61] Started RedisTest in 8.664 seconds (JVM running for 11.101)
+2021-07-09 12:02:23,731 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:55] Starting RedisTest using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 21372 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-09 12:02:23,732 INFO [main] c.r.c.RedisTest [SpringApplication.java:668] The following profiles are active: develop
+2021-07-09 12:02:24,603 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:250] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-09 12:02:24,611 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:128] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-09 12:02:24,665 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:188] Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2021-07-09 12:02:28,199 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-09 12:02:28,861 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:61] Started RedisTest in 5.815 seconds (JVM running for 7.512)
+2021-07-09 12:06:07,830 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:55] Starting RedisTest using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 7448 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-09 12:06:07,832 INFO [main] c.r.c.RedisTest [SpringApplication.java:668] The following profiles are active: develop
+2021-07-09 12:06:09,204 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:250] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-09 12:06:09,212 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:128] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-09 12:06:09,271 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:188] Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2021-07-09 12:06:12,735 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-09 12:06:13,422 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:61] Started RedisTest in 6.419 seconds (JVM running for 8.211)
+2021-07-09 12:07:08,413 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:55] Starting RedisTest using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 9260 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-09 12:07:08,415 INFO [main] c.r.c.RedisTest [SpringApplication.java:668] The following profiles are active: develop
+2021-07-09 12:07:09,320 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:250] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-09 12:07:09,324 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:128] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-09 12:07:09,365 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:188] Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2021-07-09 12:07:12,500 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-09 12:07:13,172 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:61] Started RedisTest in 5.493 seconds (JVM running for 7.484)
+2021-07-09 12:08:03,168 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:55] Starting RedisTest using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 7580 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-09 12:08:03,170 INFO [main] c.r.c.RedisTest [SpringApplication.java:668] The following profiles are active: develop
+2021-07-09 12:08:04,067 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:250] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-09 12:08:04,072 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:128] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-09 12:08:04,107 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:188] Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2021-07-09 12:08:07,215 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-09 12:08:07,974 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:61] Started RedisTest in 5.578 seconds (JVM running for 7.478)
+2021-07-09 12:08:57,191 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:55] Starting RedisTest using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 21480 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-09 12:08:57,192 INFO [main] c.r.c.RedisTest [SpringApplication.java:668] The following profiles are active: develop
+2021-07-09 12:08:58,338 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:250] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-09 12:08:58,346 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:128] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-09 12:08:58,384 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:188] Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2021-07-09 12:09:01,372 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-09 12:09:01,982 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:61] Started RedisTest in 5.347 seconds (JVM running for 7.29)
+2021-07-09 12:09:16,934 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:55] Starting RedisTest using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 12208 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-09 12:09:16,936 INFO [main] c.r.c.RedisTest [SpringApplication.java:668] The following profiles are active: develop
+2021-07-09 12:09:18,039 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:250] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-09 12:09:18,044 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:128] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-09 12:09:18,085 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:188] Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2021-07-09 12:09:21,087 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-09 12:09:21,804 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:61] Started RedisTest in 5.51 seconds (JVM running for 7.165)
+2021-07-09 12:13:25,191 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:55] Starting RedisTest using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 19468 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-09 12:13:25,193 INFO [main] c.r.c.RedisTest [SpringApplication.java:668] The following profiles are active: develop
+2021-07-09 12:13:26,028 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:250] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-09 12:13:26,033 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:128] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-09 12:13:26,069 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:188] Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2021-07-09 12:13:29,670 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-09 12:13:30,458 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:61] Started RedisTest in 5.847 seconds (JVM running for 7.454)
+2021-07-09 12:17:27,058 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:55] Starting RedisTest using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 16580 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-09 12:17:27,060 INFO [main] c.r.c.RedisTest [SpringApplication.java:668] The following profiles are active: develop
+2021-07-09 12:17:28,209 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:250] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-09 12:17:28,215 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:128] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-09 12:17:28,259 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:188] Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2021-07-09 12:17:31,675 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-09 12:17:32,320 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:61] Started RedisTest in 5.811 seconds (JVM running for 7.716)
+2021-07-09 12:18:21,255 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:55] Starting RedisTest using Java 1.8.0_281 on DESKTOP-47FLVVM with PID 21356 (started by reanon in D:\ProjectsOfCode\IdeaProjects\Anchor)
+2021-07-09 12:18:21,257 INFO [main] c.r.c.RedisTest [SpringApplication.java:668] The following profiles are active: develop
+2021-07-09 12:18:22,040 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:250] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-09 12:18:22,044 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:128] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-07-09 12:18:22,082 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:188] Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2021-07-09 12:18:24,898 INFO [main] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:57] Adding welcome page template: index
+2021-07-09 12:18:25,406 INFO [main] c.r.c.RedisTest [StartupInfoLogger.java:61] Started RedisTest in 4.701 seconds (JVM running for 6.284)
