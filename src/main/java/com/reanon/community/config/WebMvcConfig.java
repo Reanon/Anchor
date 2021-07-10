@@ -7,6 +7,7 @@ package com.reanon.community.config;
 import com.reanon.community.controller.interceptor.AlphaInterceptor;
 import com.reanon.community.controller.interceptor.LoginRequiredInterceptor;
 import com.reanon.community.controller.interceptor.LoginTicketInterceptor;
+import com.reanon.community.controller.interceptor.MessageInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.transform.impl.AddInitTransformer;
 import org.springframework.context.annotation.Configuration;
@@ -27,8 +28,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Autowired
     private LoginRequiredInterceptor loginRequiredInterceptor;
 
-    // @Autowired
-    // private MessageInterceptor messageInterceptor;
+    @Autowired
+    private MessageInterceptor messageInterceptor;
     //
     // @Autowired
     // private DataInterceptor dataInterceptor;
@@ -43,9 +44,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
         // 注册设置页面拦截器
         registry.addInterceptor(loginRequiredInterceptor)
                 .excludePathPatterns("/**/*.css", "/**/*.js", "/**/*.png", "/**/*.jpg", "/**/*.jpeg");
-        // registry.addInterceptor(messageInterceptor)
-        //         .excludePathPatterns("/css/**", "/js/**", "/img/**", "/editor-md/**", "/editor-md-upload/**");
-        //
+        registry.addInterceptor(messageInterceptor)
+                .excludePathPatterns("/css/**", "/js/**", "/img/**", "/editor-md/**", "/editor-md-upload/**");
+
         // registry.addInterceptor(dataInterceptor)
         //         .excludePathPatterns("/css/**", "/js/**", "/img/**", "/editor-md/**", "/editor-md-upload/**");
     }

@@ -208,15 +208,14 @@ public class MessageController {
     }
 
     /**
-     * 通知列表（只显示最新一条消息）
+     * 通知列表, 只显示最新一条消息
      *
      * @param model
-     * @return
      */
     @GetMapping("/notice/list")
     public String getNoticeList(Model model) {
+        // 获取当前用户
         User user = hostHolder.getUser();
-
         // 查询评论类通知
         Message message = messageService.findLatestNotice(user.getId(), TOPIC_COMMNET);
         // 封装通知需要的各种数据
@@ -224,8 +223,9 @@ public class MessageController {
             Map<String, Object> messageVO = new HashMap<>();
 
             messageVO.put("message", message);
-
+            // 将消息里的特殊字符进行转义
             String content = HtmlUtils.htmlUnescape(message.getContent());
+            // 消息内容转为 Map
             Map<String, Object> data = JSONObject.parseObject(content, HashMap.class);
 
             messageVO.put("user", userService.findUserById((Integer) data.get("userId")));
@@ -238,7 +238,7 @@ public class MessageController {
 
             int unread = messageService.findNoticeUnReadCount(user.getId(), TOPIC_COMMNET);
             messageVO.put("unread", unread);
-
+            // 评论类型
             model.addAttribute("commentNotice", messageVO);
         }
 
@@ -289,9 +289,10 @@ public class MessageController {
             model.addAttribute("followNotice", messageVO);
         }
 
-        // 查询未读消息数量
+        // 查询所有未读消息数量
         int letterUnreadCount = messageService.findLetterUnreadCount(user.getId(), null);
         model.addAttribute("letterUnreadCount", letterUnreadCount);
+
         int noticeUnreadCount = messageService.findNoticeUnReadCount(user.getId(), null);
         model.addAttribute("noticeUnreadCount", noticeUnreadCount);
 
@@ -301,27 +302,30 @@ public class MessageController {
     /**
      * 查询某个主题所包含的通知列表
      *
-     * @param topic
-     * @param page
+     * @param topic 主题
+     * @param page  分页
      * @param model
      * @return
      */
     @GetMapping("/notice/detail/{topic}")
     public String getNoticeDetail(@PathVariable("topic") String topic, Page page, Model model) {
+        // 获取当前用户
         User user = hostHolder.getUser();
-
+        // 进行分页
         page.setLimit(5);
         page.setPath("/notice/detail/" + topic);
         page.setRows(messageService.findNoticeCount(user.getId(), topic));
-
+        // 查询通知的列表, 并进行分页
         List<Message> noticeList = messageService.findNotices(user.getId(), topic, page.getOffset(), page.getLimit());
+        // 存储通知列表
         List<Map<String, Object>> noticeVoList = new ArrayList<>();
         if (noticeList != null) {
             for (Message notice : noticeList) {
+                // 当个通知的数据
                 Map<String, Object> map = new HashMap<>();
                 // 通知
                 map.put("notice", notice);
-                // 内容
+                // 通知具体内容
                 String content = HtmlUtils.htmlUnescape(notice.getContent());
                 Map<String, Object> data = JSONObject.parseObject(content, HashMap.class);
                 map.put("user", userService.findUserById((Integer) data.get("userId")));
@@ -336,7 +340,7 @@ public class MessageController {
         }
         model.addAttribute("notices", noticeVoList);
 
-        // 设置已读
+        // 将消息设置已读
         List<Integer> ids = getUnreadLetterIds(noticeList);
         if (!ids.isEmpty()) {
             messageService.readMessage(ids);

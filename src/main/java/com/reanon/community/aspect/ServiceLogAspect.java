@@ -36,6 +36,7 @@ public class ServiceLogAspect {
     public void before(JoinPoint joinPoint) {
         // 用户[IP 地址], 在某个时间访问了 [com.reanon.community.service.xxx]
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        // 使用日志处理之后, attributes 可能为 null
         if (attributes == null) {
             return;
         }

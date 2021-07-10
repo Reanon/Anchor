@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" th:href="@{/css/global.css}" />
 	<link rel="stylesheet" type="text/css" th:href="@{/css/letter.css}" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-	<title>Echo - 通知</title>
+	<title>Anchor - 通知</title>
 </head>
 <body>
 	<div class="nk-container">
@@ -48,6 +48,7 @@
 								</span>
 							</h6>
 							<div>
+								<!--显示评论类型-->
 								<a th:href="@{/notice/detail/comment}">
 									用户 <i th:utext="${commentNotice.user.username}"></i>
 									评论了你的<b th:text="${commentNotice.entityType==1 ? '帖子' : '评论'}"></b> ...

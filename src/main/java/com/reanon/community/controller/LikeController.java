@@ -1,8 +1,11 @@
 package com.reanon.community.controller;
 
 // import com.reanon.community.entity.Event;
+
+import com.reanon.community.entity.Event;
 import com.reanon.community.entity.User;
 // import com.reanon.community.event.EventProducer;
+import com.reanon.community.event.EventProducer;
 import com.reanon.community.service.LikeService;
 import com.reanon.community.utils.CommunityConstant;
 import com.reanon.community.utils.CommunityUtil;
@@ -32,13 +35,14 @@ public class LikeController implements CommunityConstant {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    // @Autowired
-    // private EventProducer eventProducer;
+    @Autowired
+    private EventProducer eventProducer;
 
 
     /**
      * 点赞
      * 异步请求
+     *
      * @param entityType   实体类型
      * @param entityId     实体 Id
      * @param entityUserId 赞的帖子/评论的作者 id
@@ -62,17 +66,18 @@ public class LikeController implements CommunityConstant {
         map.put("likeCount", likeCount);
         map.put("likeStatus", likeStatus);
 
-        // // 触发点赞事件（系统通知） - 取消点赞不通知
-        // if (likeStatus == 1) {
-        //     Event event = new Event()
-        //             .setTopic(TOPIC_LIKE)
-        //             .setUserId(hostHolder.getUser().getId())
-        //             .setEntityType(entityType)
-        //             .setEntityId(entityId)
-        //             .setEntityUserId(entityUserId)
-        //             .setData("postId", postId);
-        //     eventProducer.fireEvent(event);
-        // }
+        // 触发点赞事件(系统通知), 取消点赞不通知
+        if (likeStatus == 1) {
+            // 点赞事件
+            Event event = new Event()
+                    .setTopic(TOPIC_LIKE)
+                    .setUserId(hostHolder.getUser().getId())
+                    .setEntityType(entityType)
+                    .setEntityId(entityId)
+                    .setEntityUserId(entityUserId)
+                    .setData("postId", postId);
+            eventProducer.fireEvent(event);
+        }
         //
         // if (entityType == ENTITY_TYPE_POST) {
         //     // 计算帖子分数

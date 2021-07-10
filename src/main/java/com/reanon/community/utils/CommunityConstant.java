@@ -47,7 +47,7 @@ public interface CommunityConstant {
     // Kafka 主题：分享
     String TOPIC_SHARE = "share";
 
-    // 系统用户的 id
+    // 系统用户id
     int SYSTEM_USER_ID = 1;
 
     // 权限：普通用户

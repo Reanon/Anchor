@@ -104,5 +104,4 @@ public class CommentService {
         }
         return rows;
     }
-
 }

@@ -1,9 +1,11 @@
 package com.reanon.community.controller;
 
 // import com.reanon.community.entity.Event;
+import com.reanon.community.entity.Event;
 import com.reanon.community.entity.Page;
 import com.reanon.community.entity.User;
 // import com.reanon.community.event.EventProducer;
+import com.reanon.community.event.EventProducer;
 import com.reanon.community.service.FollowService;
 import com.reanon.community.service.UserService;
 import com.reanon.community.utils.CommunityConstant;
@@ -35,8 +37,8 @@ public class FollowController implements CommunityConstant{
     @Autowired
     private UserService userService;
 
-    // @Autowired
-    // private EventProducer eventProducer;
+    @Autowired
+    private EventProducer eventProducer;
 
     /**
      * 关注
@@ -51,14 +53,14 @@ public class FollowController implements CommunityConstant{
 
         followService.follow(user.getId(), entityType, entityId);
 
-        // // 触发关注事件（系统通知）
-        // Event event = new Event()
-        //         .setTopic(TOPIC_FOLLOW)
-        //         .setUserId(hostHolder.getUser().getId())
-        //         .setEntityType(entityType)
-        //         .setEntityId(entityId)
-        //         .setEntityUserId(entityId);
-        // eventProducer.fireEvent(event);
+        // 触发关注事件（系统通知）
+        Event event = new Event()
+                .setTopic(TOPIC_FOLLOW)
+                .setUserId(hostHolder.getUser().getId())
+                .setEntityType(entityType)
+                .setEntityId(entityId)
+                .setEntityUserId(entityId);
+        eventProducer.fireEvent(event);
 
         return CommunityUtil.getJSONString(0, "已关注");
     }
