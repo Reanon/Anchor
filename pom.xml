@@ -78,13 +78,41 @@
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
         </dependency>
+        <!--Elasticsearch-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>
 
+        <!--Spring Security-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!--thymeleaf spring security5-->
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+        </dependency>
 
+        <!--Spring Quartz-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
+        </dependency>
 
-        <!--&lt;!&ndash;Spring Security&ndash;&gt;-->
+        <!--&lt;!&ndash; 七牛云相关 &ndash;&gt;-->
         <!--<dependency>-->
-        <!--    <groupId>org.springframework.boot</groupId>-->
-        <!--    <artifactId>spring-boot-starter-security</artifactId>-->
+        <!--    <groupId>com.qiniu</groupId>-->
+        <!--    <artifactId>qiniu-java-sdk</artifactId>-->
+        <!--    <version>7.2.23</version>-->
+        <!--</dependency>-->
+
+        <!--&lt;!&ndash;Caffeine&ndash;&gt;-->
+        <!--<dependency>-->
+        <!--    <groupId>com.github.ben-manes.caffeine</groupId>-->
+        <!--    <artifactId>caffeine</artifactId>-->
+        <!--    <version>2.7.0</version>-->
         <!--</dependency>-->
 
 

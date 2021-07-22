@@ -13,10 +13,12 @@ import java.lang.reflect.Method;
 
 /**
  * 在登陆之前拦截 @LoginRequired 的方法
+ * 使用 Spring Security 替代, 废弃该拦截器
  * @author reanon
  * @create 2021-07-03
  */
 @Component
+@Deprecated
 public class LoginRequiredInterceptor implements HandlerInterceptor {
     // 判断当前是否登录
     @Autowired

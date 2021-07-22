@@ -6,6 +6,7 @@ import com.reanon.community.entity.Event;
 import com.reanon.community.entity.Message;
 import com.reanon.community.service.DiscussPostService;
 // import com.reanon.community.service.ElasticsearchService;
+import com.reanon.community.service.ElasticsearchService;
 import com.reanon.community.service.MessageService;
 import com.reanon.community.utils.CommunityConstant;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -34,8 +35,8 @@ public class EventConsumer implements CommunityConstant {
     @Autowired
     private DiscussPostService discussPostService;
 
-    // @Autowired
-    // private ElasticsearchService elasticsearchSer  vice;
+    @Autowired
+    private ElasticsearchService elasticsearchService;
 
     // @Value("${qiniu.key.access}")
     // private String accessKey;
@@ -46,6 +47,7 @@ public class EventConsumer implements CommunityConstant {
     /**
      * 消费评论、点赞、关注事件
      * 从 kafka 中取出事件, 转为消息
+     *
      * @param record 用以接受参数
      */
     @KafkaListener(topics = {TOPIC_COMMNET, TOPIC_LIKE, TOPIC_FOLLOW})
@@ -100,7 +102,7 @@ public class EventConsumer implements CommunityConstant {
             return;
         }
         DiscussPost post = discussPostService.findDiscussPostById(event.getEntityId());
-        // elasticsearchService.saveDiscusspost(post);
+        elasticsearchService.saveDiscussPost(post);
     }
 
     /**
@@ -117,6 +119,6 @@ public class EventConsumer implements CommunityConstant {
             logger.error("消息格式错误");
             return;
         }
-        // elasticsearchService.deleteDiscusspost(event.getEntityId());
+        elasticsearchService.deleteDiscussPost(event.getEntityId());
     }
 }

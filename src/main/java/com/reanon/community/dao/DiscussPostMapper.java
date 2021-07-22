@@ -43,37 +43,21 @@ public interface DiscussPostMapper {
 
     /**
      * 修改评论数量, 每次增加评论之后就需要增加
-     *
-     * @param id
-     * @param commentCount
-     * @return
      */
     int updateCommentCount(int id, int commentCount);
 
     /**
      * 修改帖子类型：0-普通; 1-置顶;
-     *
-     * @param id
-     * @param type
-     * @return
      */
     int updateType(int id, int type);
 
     /**
      * 修改帖子状态：0-正常; 1-精华; 2-拉黑;
-     *
-     * @param id
-     * @param status
-     * @return
      */
     int updateStatus(int id, int status);
 
     /**
      * 修改帖子分数
-     *
-     * @param id
-     * @param score
-     * @return
      */
     int updateScore(int id, double score);
 }

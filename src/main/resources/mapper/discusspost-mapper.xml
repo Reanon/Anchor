@@ -80,5 +80,4 @@
         set score = #{score}
         where id = #{id}
     </update>
-
 </mapper>

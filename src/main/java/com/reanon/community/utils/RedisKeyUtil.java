@@ -74,7 +74,6 @@ public class RedisKeyUtil {
     /**
      * 登陆凭证
      * @param ticket
-     * @return
      */
     public static String getTicketKey(String ticket) {
         return PREFIX_TICKET + SPLIT + ticket;
@@ -83,7 +82,6 @@ public class RedisKeyUtil {
     /**
      * 用户信息
      * @param userId
-     * @return
      */
     public static String getUserKey(int userId) {
         return PREFIX_USER + SPLIT + userId;
@@ -91,8 +89,7 @@ public class RedisKeyUtil {
 
     /**
      * 单日 UV
-     * @param date
-     * @return
+     * @param date 以天为单位统计活跃用户
      */
     public static String getUVKey(String date) {
         return PREFIX_UV + SPLIT + date;
@@ -100,9 +97,8 @@ public class RedisKeyUtil {
 
     /**
      * 区间 UV
-     * @param startDate
-     * @param endDate
-     * @return
+     * @param startDate 开始日期
+     * @param endDate 结束日期
      */
     public static String getUVKey(String startDate, String endDate) {
         return PREFIX_UV + SPLIT + startDate + SPLIT + endDate;
@@ -111,17 +107,16 @@ public class RedisKeyUtil {
     /**
      * 单日 DAU
      * @param date
-     * @return
      */
     public static String getDAUKey(String date) {
+        // dau:yyyy-MM-dd
         return PREFIX_DAU + SPLIT + date;
     }
 
     /**
-     * 区间 DAU
+     * 区间 DAU 活跃用户
      * @param startDate
      * @param endDate
-     * @return
      */
     public static String getDAUKey(String startDate, String endDate) {
         return PREFIX_DAU + SPLIT + startDate + SPLIT + endDate;
@@ -129,7 +124,6 @@ public class RedisKeyUtil {
 
     /**
      * 帖子分数
-     * @return
      */
     public static String getPostScoreKey() {
         return PREFIX_POST + SPLIT + "score";

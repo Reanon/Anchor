@@ -4,10 +4,7 @@ package com.reanon.community.config;
 // import com.reanon.community.controller.interceptor.LoginTicketInterceptor;
 // import com.reanon.community.controller.interceptor.MessageInterceptor;
 
-import com.reanon.community.controller.interceptor.AlphaInterceptor;
-import com.reanon.community.controller.interceptor.LoginRequiredInterceptor;
-import com.reanon.community.controller.interceptor.LoginTicketInterceptor;
-import com.reanon.community.controller.interceptor.MessageInterceptor;
+import com.reanon.community.controller.interceptor.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.transform.impl.AddInitTransformer;
 import org.springframework.context.annotation.Configuration;
@@ -24,15 +21,16 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Autowired
     private LoginTicketInterceptor loginTicketInterceptor;
 
-    // 设置页面拦截器
-    @Autowired
-    private LoginRequiredInterceptor loginRequiredInterceptor;
-
     @Autowired
     private MessageInterceptor messageInterceptor;
-    //
+
+    @Autowired
+    private DataInterceptor dataInterceptor;
+
+    // 设置页面拦截器
+    // 使用 Spring Security 替代, 废弃该拦截器
     // @Autowired
-    // private DataInterceptor dataInterceptor;
+    // private LoginRequiredInterceptor loginRequiredInterceptor;
 
     // 对除静态资源外所有路径进行拦截
     @Override
@@ -40,15 +38,15 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry.addInterceptor(loginTicketInterceptor)
                 // 排除对静态资源的访问
                 .excludePathPatterns("/css/**", "/js/**", "/img/**", "/editor-md/**", "/editor-md-upload/**");
-
-        // 注册设置页面拦截器
-        registry.addInterceptor(loginRequiredInterceptor)
-                .excludePathPatterns("/**/*.css", "/**/*.js", "/**/*.png", "/**/*.jpg", "/**/*.jpeg");
         registry.addInterceptor(messageInterceptor)
                 .excludePathPatterns("/css/**", "/js/**", "/img/**", "/editor-md/**", "/editor-md-upload/**");
+        // 统计 DAU、UV
+        registry.addInterceptor(dataInterceptor)
+                .excludePathPatterns("/css/**", "/js/**", "/img/**", "/editor-md/**", "/editor-md-upload/**");
+        // 注册设置页面拦截器，已废弃
+        // registry.addInterceptor(loginRequiredInterceptor)
+        //         .excludePathPatterns("/**/*.css", "/**/*.js", "/**/*.png", "/**/*.jpg", "/**/*.jpeg");
 
-        // registry.addInterceptor(dataInterceptor)
-        //         .excludePathPatterns("/css/**", "/js/**", "/img/**", "/editor-md/**", "/editor-md-upload/**");
     }
     //
     // // 配置虚拟路径映射访问

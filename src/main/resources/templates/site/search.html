@@ -21,9 +21,11 @@
 				<!-- 帖子列表 -->
 				<ul class="list-unstyled mt-4">
 					<li class="media pb-3 pt-3 mb-3 border-bottom" th:each="map:${discussPosts}">
+						<!--作者头像-->
 						<img th:src="${map.user.headerUrl}" class="mr-4 rounded-circle" alt="用户头像" style="width:50px; height: 50px">
 						<div class="media-body">
 							<h6 class="mt-0 mb-3">
+								<!--帖子-->
 								<a th:href="@{|/discuss/detail/${map.post.id}|}" th:utext="${map.post.title}"></a>
 							</h6>
 							<div class="mb-3" th:utext="${map.post.content}"></div>

@@ -3,6 +3,7 @@ package com.reanon.community.controller;
 import com.reanon.community.entity.*;
 // import com.reanon.community.event.EventProducer;
 // import com.reanon.community.service.CommentService;
+import com.reanon.community.event.EventProducer;
 import com.reanon.community.service.CommentService;
 import com.reanon.community.service.DiscussPostService;
 // import com.reanon.community.service.LikeService;
@@ -12,9 +13,11 @@ import com.reanon.community.utils.CommunityConstant;
 import com.reanon.community.utils.CommunityUtil;
 import com.reanon.community.utils.HostHolder;
 // import com.reanon.community.utils.RedisKeyUtil;
+import com.reanon.community.utils.RedisKeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 // import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -43,12 +46,12 @@ public class DiscussPostController implements CommunityConstant {
     // 点赞相关
     @Autowired
     private LikeService likeService;
-    //
-    // @Autowired
-    // private EventProducer eventProducer;
-    //
-    // @Autowired
-    // private RedisTemplate redisTemplate;
+
+    @Autowired
+    private EventProducer eventProducer;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     // 网站域名
     @Value("${community.path.domain}")
@@ -132,14 +135,14 @@ public class DiscussPostController implements CommunityConstant {
         // 添加帖子
         discussPostService.addDiscussPost(discussPost);
 
-        // // 触发发帖事件，通过消息队列将其存入 Elasticsearch 服务器
-        // Event event = new Event()
-        //         .setTopic(TOPIC_PUBLISH)
-        //         .setUserId(user.getId())
-        //         .setEntityType(ENTITY_TYPE_POST)
-        //         .setEntityId(discussPost.getId());
-        // eventProducer.fireEvent(event);
-        //
+        // 触发发帖事件，通过消息队列将其存入 Elasticsearch 服务器
+        Event event = new Event()
+                .setTopic(TOPIC_PUBLISH)
+                .setUserId(user.getId())
+                .setEntityType(ENTITY_TYPE_POST)
+                .setEntityId(discussPost.getId());
+        eventProducer.fireEvent(event);
+
         // // 计算帖子分数
         // String redisKey = RedisKeyUtil.getPostScoreKey();
         // redisTemplate.opsForSet().add(redisKey, discussPost.getId());
@@ -243,74 +246,64 @@ public class DiscussPostController implements CommunityConstant {
 
         return "/site/discuss-detail";
     }
-    //
-    // /**
-    //  * 置顶帖子
-    //  * @param id
-    //  * @return
-    //  */
-    // @PostMapping("/top")
-    // @ResponseBody
-    // public String updateTop(int id, int type) {
-    //     discussPostService.updateType(id, type);
-    //
-    //     // 触发发帖事件，通过消息队列将其存入 Elasticsearch 服务器
-    //     Event event = new Event()
-    //             .setTopic(TOPIC_PUBLISH)
-    //             .setUserId(hostHolder.getUser().getId())
-    //             .setEntityType(ENTITY_TYPE_POST)
-    //             .setEntityId(id);
-    //     eventProducer.fireEvent(event);
-    //
-    //     return CommunityUtil.getJSONString(0);
-    // }
-    //
-    //
-    // /**
-    //  * 加精帖子
-    //  * @param id
-    //  * @return
-    //  */
-    // @PostMapping("/wonderful")
-    // @ResponseBody
-    // public String setWonderful(int id) {
-    //     discussPostService.updateStatus(id, 1);
-    //
-    //     // 触发发帖事件，通过消息队列将其存入 Elasticsearch 服务器
-    //     Event event = new Event()
-    //             .setTopic(TOPIC_PUBLISH)
-    //             .setUserId(hostHolder.getUser().getId())
-    //             .setEntityType(ENTITY_TYPE_POST)
-    //             .setEntityId(id);
-    //     eventProducer.fireEvent(event);
-    //
-    //     // 计算帖子分数
-    //     String redisKey = RedisKeyUtil.getPostScoreKey();
-    //     redisTemplate.opsForSet().add(redisKey, id);
-    //
-    //     return CommunityUtil.getJSONString(0);
-    // }
-    //
-    //
-    // /**
-    //  * 删除帖子
-    //  * @param id
-    //  * @return
-    //  */
-    // @PostMapping("/delete")
-    // @ResponseBody
-    // public String setDelete(int id) {
-    //     discussPostService.updateStatus(id, 2);
-    //
-    //     // 触发删帖事件，通过消息队列更新 Elasticsearch 服务器
-    //     Event event = new Event()
-    //             .setTopic(TOPIC_DELETE)
-    //             .setUserId(hostHolder.getUser().getId())
-    //             .setEntityType(ENTITY_TYPE_POST)
-    //             .setEntityId(id);
-    //     eventProducer.fireEvent(event);
-    //
-    //     return CommunityUtil.getJSONString(0);
-    // }
 
+    /**
+     * 置顶帖子
+     */
+    @PostMapping("/top")
+    @ResponseBody
+    public String updateTop(int id, int type) {
+        discussPostService.updateType(id, type);
+
+        // 触发发帖事件，通过消息队列将其存入 Elasticsearch 服务器
+        Event event = new Event()
+                .setTopic(TOPIC_PUBLISH)
+                .setUserId(hostHolder.getUser().getId())
+                .setEntityType(ENTITY_TYPE_POST)
+                .setEntityId(id);
+        eventProducer.fireEvent(event);
+
+        return CommunityUtil.getJSONString(0);
+    }
+
+
+    /**
+     * 加精帖子
+     */
+    @PostMapping("/wonderful")
+    @ResponseBody
+    public String setWonderful(int id) {
+        discussPostService.updateStatus(id, 1);
+        // 触发发帖事件，通过消息队列将其存入 Elasticsearch 服务器, 交给 kafka 来异步实现
+        Event event = new Event()
+                .setTopic(TOPIC_PUBLISH)
+                .setUserId(hostHolder.getUser().getId())
+                .setEntityType(ENTITY_TYPE_POST)
+                .setEntityId(id);
+        eventProducer.fireEvent(event);
+
+        // 计算帖子分数
+        String redisKey = RedisKeyUtil.getPostScoreKey();
+        redisTemplate.opsForSet().add(redisKey, id);
+
+        return CommunityUtil.getJSONString(0);
+    }
+
+
+    /**
+     * 删除帖子
+     */
+    @PostMapping("/delete")
+    @ResponseBody
+    public String setDelete(int id) {
+        discussPostService.updateStatus(id, 2);
+        // 触发删帖事件，通过消息队列更新 Elasticsearch 服务器
+        Event event = new Event()
+                .setTopic(TOPIC_DELETE)
+                .setUserId(hostHolder.getUser().getId())
+                .setEntityType(ENTITY_TYPE_POST)
+                .setEntityId(id);
+        eventProducer.fireEvent(event);
+        return CommunityUtil.getJSONString(0);
+    }
 }
