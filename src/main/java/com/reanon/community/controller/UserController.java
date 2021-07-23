@@ -2,6 +2,8 @@ package com.reanon.community.controller;
 
 // import com.reanon.community.entity.Comment;
 
+import com.aliyun.oss.OSS;
+import com.aliyun.oss.OSSClientBuilder;
 import com.reanon.community.annotation.LoginRequired;
 import com.reanon.community.entity.DiscussPost;
 import com.reanon.community.entity.Page;
@@ -24,10 +26,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.*;
 
 
@@ -70,47 +69,92 @@ public class UserController implements CommunityConstant {
     @Value("${server.servlet.context-path}")
     private String contextPath;
 
-    // @Value("${qiniu.key.access}")
-    // private String accessKey;
-    //
-    // @Value("${qiniu.key.secret}")
-    // private String secretKey;
-    //
-    // @Value("${qiniu.bucket.header.name}")
-    // private String headerBucketName;
-    //
-    // @Value("${qiniu.bucket.header.url}")
-    // private String headerBucketUrl;
+
+    // 阿里云 OSS 对象信息
+    @Value("${aliyun.oss.file.endpoint}")
+    private String endpoint;
+
+    @Value("${aliyun.oss.file.keyid}")
+    private String keyid;
+
+    @Value("${aliyun.oss.file.secretid}")
+    private String secretid;
+
+    @Value("${aliyun.oss.file.bucket.name}")
+    private String bucket;
+
+    @Value("${aliyun.oss.file.bucket.dir}")
+    private String dirName;
 
     /**
      * 跳转至账号设置界面
-     *
-     * @return
      */
     @LoginRequired // 配置访问时间
     @GetMapping("/setting")
     public String getSettingPage(Model model) {
-        // 生成上传文件的名称
-        String fileName = CommunityUtil.generateUUID();
-        model.addAttribute("fileName", fileName);
-
-        // // 设置响应信息(qiniu 的规定写法)
-        // StringMap policy = new StringMap();
-        // policy.put("returnBody", CommunityUtil.getJSONString(0));
-        // // 生成上传到 qiniu 的凭证(qiniu 的规定写法)
-        // Auth auth = Auth.create(accessKey, secretKey);
-        // String uploadToken = auth.uploadToken(headerBucketName, fileName, 3600, policy);
-        // model.addAttribute("uploadToken", uploadToken);
-
         return "/site/setting";
     }
 
+    @GetMapping("/1")
+    public String goToIndex() {
+        // 重定向到首页
+        return "/index";
+    }
+
+
     /**
-     * 更新头像(本地，已废弃)
+     * 更新图像路径 (将本地的图像路径更新为云服务器上的图像路径）
+     *
+     * @param headerImage 文件名
+     * @param model
+     */
+    @PostMapping("/uploadOss")
+    public String updateHeaderUrl(MultipartFile headerImage, Model model) {
+        if (headerImage == null) {
+            model.addAttribute("error", "您未选择图片！");
+            return "/site/setting";
+        }
+        // 文件名
+        String filename = headerImage.getOriginalFilename();
+        //.png等后缀
+        String suffix = filename.substring(filename.lastIndexOf("."));
+        if (!suffix.equals(".png")) {
+            model.addAttribute("error", "文件格式不正确！");
+            return "/site/setting";
+        }
+        // 生成随机访问 Url
+        filename = CommunityUtil.generateUUID();
+
+        // 文件名加上头像所在文件夹名
+        filename = dirName + "/" + filename;
+
+        // 上传头像
+        OSS ossClient = new OSSClientBuilder().build(endpoint, keyid, secretid);
+        try (
+                InputStream is = headerImage.getInputStream();
+        ) {
+            ossClient.putObject(bucket, filename, is);
+            ossClient.shutdown();
+        } catch (IOException e) {
+            logger.error("上传文件失败:" + e.getMessage());
+            throw new RuntimeException("上传文件失败，服务器异常！", e);
+        }
+
+        // 更新 headerUrl 的 Web 访问路径
+        // 文件位置(web访问路径): http://${bucket}.oss-cn-beijing.aliyuncs.com/${dirName}/${filename}
+        User user = hostHolder.getUser();
+        // 服务器实际存放头像位置
+        String headerUrl = "http://" + bucket + "." + endpoint + "/" + filename;
+        userService.updateHeader(user.getId(), headerUrl);
+
+        // 重定向到首页
+        return "redirect: /index";
+    }
+
+    /**
+     * 本地更新头像(已废弃)
      *
      * @param headerImage MVC 框架提供的API
-     * @param model
-     * @return
      */
     @LoginRequired
     @PostMapping(path = "/upload")
@@ -126,10 +170,8 @@ public class UserController implements CommunityConstant {
             model.addAttribute("error", "文件格式不正确！");
             return "/site/setting";
         }
-
         // 生成随机访问 url
         filename = CommunityUtil.generateUUID() + suffix;
-
         // 上传头像
         File file = new File(uploadPath + "/" + filename);
         try {
@@ -139,7 +181,6 @@ public class UserController implements CommunityConstant {
             logger.error("上传文件失败:" + e.getMessage());
             throw new RuntimeException("上传文件失败，服务器异常！", e);
         }
-
         // 更新用户的 headerUrl(web访问路径)
         // http://localhost:8080/anchor/user/header/xxx.png
         User user = hostHolder.getUser();
@@ -152,8 +193,8 @@ public class UserController implements CommunityConstant {
     /**
      * 访问本地头像（废弃）
      *
-     * @param filename
-     * @param response
+     * @param filename 文件名
+     * @param response 响应
      */
     @GetMapping(path = "/header/{filename}")
     public void getHeader(@PathVariable("filename") String filename, HttpServletResponse response) {
@@ -179,56 +220,36 @@ public class UserController implements CommunityConstant {
     }
 
 
-    // /**
-    //  * 更新图像路径（将本地的图像路径更新为云服务器上的图像路径）
-    //  * @param fileName
-    //  * @return
-    //  */
-    // @PostMapping("/header/url")
-    // @ResponseBody
-    // public String updateHeaderUrl(String fileName) {
-    //     if (StringUtils.isBlank(fileName)) {
-    //         return CommunityUtil.getJSONString(1, "文件名不能为空");
-    //     }
-    //
-    //     // 文件在云服务器上的的访问路径
-    //     String url = headerBucketUrl + "/" + fileName;
-    //     userService.updateHeader(hostHolder.getUser().getId(), url);
-    //
-    //     return CommunityUtil.getJSONString(0);
-    //
-    // }
-    //
-    // /**
-    //  * 修改用户密码
-    //  * @param oldPassword 原密码
-    //  * @param newPassword 新密码
-    //  * @param model
-    //  * @return
-    //  */
-    // @PostMapping("/password")
-    // public String updatePassword(String oldPassword, String newPassword, Model model) {
-    //     // 验证原密码是否正确
-    //     User user = hostHolder.getUser();
-    //     String md5OldPassword = CommunityUtil.md5(oldPassword + user.getSalt());
-    //     if (!user.getPassword().equals(md5OldPassword)) {
-    //         model.addAttribute("oldPasswordError", "原密码错误");
-    //         return "/site/setting";
-    //     }
-    //
-    //     // 判断新密码是否合法
-    //     String md5NewPassword = CommunityUtil.md5(newPassword + user.getSalt());
-    //     if (user.getPassword().equals(md5NewPassword)) {
-    //         model.addAttribute("newPasswordError", "新密码和原密码相同");
-    //         return "/site/setting";
-    //     }
-    //
-    //     // 修改用户密码
-    //     userService.updatePassword(user.getId(), newPassword);
-    //
-    //     return "redirect:/index";
-    // }
-    //
+    /**
+     * 修改用户密码
+     *
+     * @param oldPassword 原密码
+     * @param newPassword 新密码
+     * @param model
+     */
+    @PostMapping("/password")
+    public String updatePassword(String oldPassword, String newPassword, Model model) {
+        // 验证原密码是否正确
+        User user = hostHolder.getUser();
+        String md5OldPassword = CommunityUtil.md5(oldPassword + user.getSalt());
+        if (!user.getPassword().equals(md5OldPassword)) {
+            model.addAttribute("oldPasswordError", "原密码错误");
+            return "/site/setting";
+        }
+
+        // 判断新密码是否合法
+        String md5NewPassword = CommunityUtil.md5(newPassword + user.getSalt());
+        if (user.getPassword().equals(md5NewPassword)) {
+            model.addAttribute("newPasswordError", "新密码和原密码相同");
+            return "/site/setting";
+        }
+
+        // 修改用户密码
+        userService.updatePassword(user.getId(), newPassword);
+
+        return "redirect:/index";
+    }
+
 
     /**
      * 进入个人主页

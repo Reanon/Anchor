@@ -37,7 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Comm
         http.authorizeRequests()
                 .antMatchers(
                     "/user/setting",// 用户设置
-                        "/user/upload",         // 上传头像
+                        "/user/uploadOss",      // 上传头像
                         "/discuss/publish",     // 进入帖子发布页
                         "/comment/add/**",      // 添加评论等
                         "/letter/**",           // 私信
