@@ -143,9 +143,9 @@ public class DiscussPostController implements CommunityConstant {
                 .setEntityId(discussPost.getId());
         eventProducer.fireEvent(event);
 
-        // // 计算帖子分数
-        // String redisKey = RedisKeyUtil.getPostScoreKey();
-        // redisTemplate.opsForSet().add(redisKey, discussPost.getId());
+        // 贴子发布时，计算帖子初始分数
+        String redisKey = RedisKeyUtil.getPostScoreKey();
+        redisTemplate.opsForSet().add(redisKey, discussPost.getId());
 
         return CommunityUtil.getJSONString(0, "发布成功");
     }

@@ -50,7 +50,7 @@ public class IndexController {
      * 方法调用前, SpringMVC会自动实例化Model和 Page,并将 Page 注入Model
      * 所以,在 thymeleaf 中可以直接访问 Page 对象中的数据
      *
-     * @param orderMode 默认是 0（最新）
+     * @param orderMode 默认是 0, 即按照最新方式排
      */
     @GetMapping("/index")
     public String getIndexPage(Model model, Page page,
@@ -58,8 +58,9 @@ public class IndexController {
 
         // 获取总页数
         page.setRows(discussPostService.findDiscussPostRows(0));
-        // page.setPath("/index?orderMode=" + orderMode);
-        page.setPath("/index");
+        // 在分页里拼上查找模式
+        page.setPath("/index?orderMode=" + orderMode);
+        // page.setPath("/index");
 
         // 分页查询
         List<DiscussPost> list = discussPostService.findDiscussPosts(0, page.getOffset(), page.getLimit(), orderMode);

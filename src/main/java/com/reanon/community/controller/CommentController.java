@@ -87,9 +87,9 @@ public class CommentController {
                     .setEntityId(discussPostId);
             eventProducer.fireEvent(event);
 
-            // // 计算帖子分数
-            // String redisKey = RedisKeyUtil.getPostScoreKey();
-            // redisTemplate.opsForSet().add(redisKey, discussPostId);
+            // 计算帖子分数
+            String redisKey = RedisKeyUtil.getPostScoreKey();
+            redisTemplate.opsForSet().add(redisKey, discussPostId);
         }
         return "redirect:/discuss/detail/" + discussPostId;
     }

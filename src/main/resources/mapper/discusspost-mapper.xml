@@ -21,6 +21,7 @@
         <if test="userId!=0">
             and user_id = #{userId}
         </if>
+
         <if test="orderMode == 0">
             order by `type` desc, `create_time` desc
         </if>

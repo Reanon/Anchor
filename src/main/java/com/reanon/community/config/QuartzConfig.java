@@ -22,7 +22,7 @@ public class QuartzConfig {
     // 3.将 FactoryBean 注入给其他 Bean
     // 4.该 Bean 得到的是 FactoryBean 管理的实例
     /**
-     * 刷新帖子分数任务
+     * 刷新帖子分数的任务
      * 配置 JobDetail
      */
     @Bean
