@@ -108,13 +108,18 @@
             <version>3.11.3</version>
         </dependency>
 
-        <!--&lt;!&ndash;Caffeine&ndash;&gt;-->
-        <!--<dependency>-->
-        <!--    <groupId>com.github.ben-manes.caffeine</groupId>-->
-        <!--    <artifactId>caffeine</artifactId>-->
-        <!--    <version>2.7.0</version>-->
-        <!--</dependency>-->
+        <!--Caffeine-->
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <version>2.7.0</version>
+        </dependency>
 
+        <!--SpringBoot 监控-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
         <!--Devtools 热部署-->
         <dependency>

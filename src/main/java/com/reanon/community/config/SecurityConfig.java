@@ -63,7 +63,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Comm
                 )
                 .antMatchers(
                         "/discuss/delete", // 删除帖子
-                        "/data/**"                     // 查看网站统计数据
+                        "/data/**",                    // 查看网站统计数据
+                        "/actuator/**"                 // 性能监控
                 )
                 .hasAnyAuthority(
                         AUTHORITY_ADMIN     // 管理员

@@ -1,13 +1,23 @@
 package com.reanon.community.service;
 
+import com.github.benmanes.caffeine.cache.CacheLoader;
+import com.github.benmanes.caffeine.cache.Caffeine;
+import com.github.benmanes.caffeine.cache.LoadingCache;
 import com.reanon.community.dao.DiscussPostMapper;
 import com.reanon.community.entity.DiscussPost;
 import com.reanon.community.utils.SensitiveFilter;
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.HtmlUtils;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 帖子相关
@@ -17,12 +27,83 @@ import java.util.List;
  */
 @Service
 public class DiscussPostService {
+
+    private static final Logger logger = LoggerFactory.getLogger(DiscussPostService.class);
+
     @Autowired
     private DiscussPostMapper discussPostMapper;
 
     // 敏感词过滤
     @Autowired
     private SensitiveFilter sensitiveFilter;
+
+    @Value("${caffeine.posts.max-size}")
+    private int maxSize;
+
+    @Value("${caffeine.posts.expire-seconds}")
+    private int expireSeconds;
+
+    // 热帖列表的本地缓存
+    // key - offset(每页的起始索引), limit(每页显示多少条数据)
+    private LoadingCache<String, List<DiscussPost>> postListCache;
+
+    // 帖子总数的本地缓存
+    // key - userId(其实就是0,表示查询的是所有用户. 对特定用户的查询不启用缓存）
+    private LoadingCache<Integer, Integer> postRowsCache;
+
+
+    /**
+     * 初始化本地缓存 Caffeine
+     */
+    @PostConstruct
+    public void init() {
+        // 初始化热帖列表缓存
+        postListCache = Caffeine.newBuilder()
+                // 缓存数量
+                .maximumSize(maxSize)
+                // 过期时间
+                .expireAfterWrite(expireSeconds, TimeUnit.SECONDS)
+                // 传入 CacheLoader
+                .build(new CacheLoader<String, List<DiscussPost>>() {
+                    // 如果缓存 Caffeine 中没有数据，告诉缓存如何去数据库中查数据，再装到缓存中
+                    @Nullable
+                    @Override
+                    public List<DiscussPost> load(@NonNull String key) throws Exception {
+                        if (key == null || key.length() == 0) {
+                            throw new IllegalArgumentException("参数错误");
+                        }
+                        // 参数
+                        String[] params = key.split(":");
+                        if (params == null || params.length != 2) {
+                            throw new IllegalArgumentException("参数错误");
+                        }
+
+                        int offset = Integer.valueOf(params[0]);
+                        int limit = Integer.valueOf(params[1]);
+
+                        // 此处可以再访问二级缓存 Redis ...
+
+                        // 访问本地数据库
+                        logger.debug("load post list from DB");
+                        return discussPostMapper.selectDiscussPosts(0, offset, limit, 1);
+                    }
+                });
+
+        // 初始化帖子总数缓存
+        postRowsCache = Caffeine.newBuilder()
+                .maximumSize(maxSize)
+                .expireAfterWrite(expireSeconds, TimeUnit.SECONDS)
+                .build(new CacheLoader<Integer, Integer>() {
+                    @Nullable
+                    @Override
+                    public Integer load(@NonNull Integer key) throws Exception {
+                        // 访问本地数据库
+                        logger.debug("load post rows from DB");
+                        return discussPostMapper.selectDiscussPostRows(key);
+                    }
+                });
+    }
+
 
     /**
      * 分页查询讨论帖信息
@@ -34,7 +115,12 @@ public class DiscussPostService {
      * @param orderMode 排行模式(若传入 1, 则按照热度来排序)
      */
     public List<DiscussPost> findDiscussPosts(int userId, int offset, int limit, int orderMode) {
-
+        // 查询本地缓存(当查询的是所有用户的帖子并且按照热度排序时)
+        if (userId == 0 && orderMode == 1) {
+            return postListCache.get(offset + ":" + limit);
+        }
+        // 查询数据库
+        logger.debug("load post list from DB");
         return discussPostMapper.selectDiscussPosts(userId, offset, limit, orderMode);
     }
 
@@ -45,7 +131,12 @@ public class DiscussPostService {
      *               当传入的 userId ！= 0 时计算该指定用户的帖子总数
      */
     public int findDiscussPostRows(int userId) {
-
+        // 查询本地缓存(当查询的是所有用户的帖子总数时)
+        if (userId == 0) {
+            return postRowsCache.get(userId);
+        }
+        // 查询数据库
+        logger.debug("load post rows from DB");
         return discussPostMapper.selectDiscussPostRows(userId);
     }
 
@@ -81,7 +172,7 @@ public class DiscussPostService {
     /**
      * 修改帖子的评论数量
      *
-     * @param id  帖子 id
+     * @param id           帖子 id
      * @param commentCount
      * @return
      */
