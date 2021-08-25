@@ -61,10 +61,9 @@ public class CommentService {
 
     /**
      * 分页查询某个用户的评论/回复列表
-     * @param userId
-     * @param offset
-     * @param limit
-     * @return
+     * @param userId  用户id
+     * @param offset  偏移量
+     * @param limit   限制
      */
     public List<Comment> findCommentByUserId(int userId, int offset, int limit) {
         return commentMapper.selectCommentByUserId(userId, offset, limit);
@@ -82,8 +81,7 @@ public class CommentService {
     /**
      * 添加评论, 需要事务管理
      * 使用声明式事务
-     * @param comment
-     * @return
+     * @param comment 评论
      */
     @Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED)
     public int addComment(Comment comment) {

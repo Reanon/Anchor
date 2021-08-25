@@ -26,11 +26,13 @@ public class LikeService {
      * @param entityUserId 被赞的帖子/评论的作者 id
      */
     public void like(int userId, int entityType, int entityId, int entityUserId) {
+        // 开启事务
         redisTemplate.execute(new SessionCallback() {
             @Override
             public Object execute(RedisOperations redisOperations) throws DataAccessException {
                 // 实体在 Redis 中的key
                 String entityLikeKey = RedisKeyUtil.getEntityLikeKey(entityType, entityId);
+
                 // 实体作者在 Redis 中的 key
                 String userLikeKey = RedisKeyUtil.getUserLikeKey(entityUserId);
 
@@ -41,6 +43,7 @@ public class LikeService {
                 if (isMember) {
                     // 如果用户已经点过赞，点第二次则取消赞
                     redisOperations.opsForSet().remove(entityLikeKey, userId);
+                    // 将被赞作者的受赞数减一
                     redisOperations.opsForValue().decrement(userLikeKey);
                 } else {
                     // 该用户没有点赞，则给实体添加点赞
@@ -68,21 +71,21 @@ public class LikeService {
     /**
      * 查询某个用户对某个实体的点赞状态（是否已赞）
      *
-     * @param userId
-     * @param entityType
-     * @param entityId
+     * @param userId      点赞的用户
+     * @param entityType  实体类型: 帖子 或 评论
+     * @param entityId    实体 Id
      * @return 1:已赞，0:未赞
      */
     public int findEntityLikeStatus(int userId, int entityType, int entityId) {
         String entityLikeKey = RedisKeyUtil.getEntityLikeKey(entityType, entityId);
+        // 查询该用户是否点赞了当前帖子
         return redisTemplate.opsForSet().isMember(entityLikeKey, userId) ? 1 : 0;
     }
 
     /**
      * 查询某个用户获得赞数量
      *
-     * @param userId
-     * @return
+     * @param userId  用户 Id
      */
     public int findUserLikeCount(int userId) {
         String userLikeKey = RedisKeyUtil.getUserLikeKey(userId);

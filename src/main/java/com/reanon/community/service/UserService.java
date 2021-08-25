@@ -88,6 +88,7 @@ public class UserService implements CommunityConstant {
      * @return Map<String, Object> 返回错误提示消息，如果返回的 map 为空，则说明注册成功
      */
     public Map<String, Object> register(User user) {
+        // 用以保存错误信息
         Map<String, Object> map = new HashMap<>();
 
         if (user == null) {
@@ -119,15 +120,21 @@ public class UserService implements CommunityConstant {
         }
 
         // 注册用户
-        user.setSalt(CommunityUtil.generateUUID().substring(0, 5)); // 生成随机的 salt
-        user.setPassword(CommunityUtil.md5(user.getPassword() + user.getSalt())); // 加盐加密
-        user.setType(0); // 默认普通用户
-        user.setStatus(0); // 默认未激活
-        user.setActivationCode(CommunityUtil.generateUUID()); // 激活码
-        // 随机头像, 用户登录后可以自行修改
+        // 1、生成随机的 salt
+        user.setSalt(CommunityUtil.generateUUID().substring(0, 5));
+        // 2、对密码进行加盐加密
+        user.setPassword(CommunityUtil.md5(user.getPassword() + user.getSalt()));
+        // 默认普通用户
+        // 默认未激活
+        user.setType(0);
+        user.setStatus(0);
+        // 3、生成激活码
+        user.setActivationCode(CommunityUtil.generateUUID());
+        // 4、随机头像, 用户登录后可以自行修改
         user.setHeaderUrl(String.format("http://images.nowcoder.com/head/%dt.png", new Random().nextInt(1000)));
-        // 设置注册时间
+        // 5、设置注册时间
         user.setCreateTime(new Date());
+        // 插入数据
         userMapper.insertUser(user);
 
         // 给注册用户发送激活邮件
@@ -156,7 +163,7 @@ public class UserService implements CommunityConstant {
         } else if (user.getActivationCode().equals(code)) {
             // 修改用户状态为已激活
             userMapper.updateStatus(userId, 1);
-            // 用户信息变更，清除缓存中的旧数据
+            // 用户信息变更，清除 Redis 缓存中的旧数据
             clearCache(userId);
             return ACTIVATION_SUCCESS;
         } else {
@@ -182,14 +189,12 @@ public class UserService implements CommunityConstant {
             map.put("passwordMsg", "密码不能为空");
             return map;
         }
-
         // 验证账号
         User user = userMapper.selectByName(username);
         if (user == null) {
             map.put("usernameMsg", "该账号不存在");
             return map;
         }
-
         // 验证账号状态
         if (user.getStatus() == 0) {
             // 账号未激活
@@ -206,17 +211,20 @@ public class UserService implements CommunityConstant {
             return map;
         }
 
-        // 用户名和密码均正确，则为该用户生成登录凭证
+        // 1、用户名和密码均正确，则为该用户生成登录凭证
         LoginTicket loginTicket = new LoginTicket();
         loginTicket.setUserId(user.getId());
-        loginTicket.setTicket(CommunityUtil.generateUUID()); // 随机凭证
-        loginTicket.setStatus(0); // 设置凭证状态为有效（当用户登出的时候，设置凭证状态为无效）
-        loginTicket.setExpired(new Date(System.currentTimeMillis() + expiredSeconds * 1000)); // 设置凭证到期时间
+        // 随机凭证: 随机字符串
+        loginTicket.setTicket(CommunityUtil.generateUUID());
+        // 设置凭证状态为有效（当用户登出的时候，设置凭证状态为无效）
+        loginTicket.setStatus(0);
+        // 设置凭证到期时间
+        loginTicket.setExpired(new Date(System.currentTimeMillis() + expiredSeconds * 1000));
 
         // 将登录凭证存入MySQl 数据库
         // loginTicketMapper.insertLoginTicket(loginTicket);
 
-        // 优化: 将登录凭证存入 Redis
+        // 2、优化: 将登录凭证存入 Redis
         String redisKey = RedisKeyUtil.getTicketKey(loginTicket.getTicket());
         redisTemplate.opsForValue().set(redisKey, loginTicket);
 
@@ -233,9 +241,10 @@ public class UserService implements CommunityConstant {
         // 设为登录无效
         // loginTicketMapper.updateStatus(ticket, 1);
 
-        // 优化：修改（先删除再插入）对应用户在 redis 中的凭证状态
+        // 优化: 修改（先删除再插入）对应用户在 redis 中的凭证状态
         String redisKey = RedisKeyUtil.getTicketKey(ticket);
         LoginTicket loginTicket = (LoginTicket) redisTemplate.opsForValue().get(redisKey);
+        // 设置登录凭证为无效
         loginTicket.setStatus(1);
         redisTemplate.opsForValue().set(redisKey, loginTicket);
     }

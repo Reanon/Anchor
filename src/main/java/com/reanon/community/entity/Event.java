@@ -12,11 +12,16 @@ import java.util.Map;
 @Data
 @ToString
 public class Event {
-    private String topic; // 事件类型
-    private int userId; // 事件由谁触发
+    // 事件类型
+    private String topic;
+    // 事件由谁触发
+    private int userId;
     private int entityType; // 实体类型: 点赞、评论、关注
     private int entityId; // 实体 id
-    private int entityUserId; // 实体的作者(该通知发送给他)
+
+    // 实体的作者(通知应该发送给他)
+    private int entityUserId;
+
     // 存储未来可能需要用到的数据
     private Map<String, Object> data = new HashMap<>();
 
@@ -25,7 +30,6 @@ public class Event {
         // 链式表达式
         return this;
     }
-
 
     public Event setUserId(int userId) {
         this.userId = userId;

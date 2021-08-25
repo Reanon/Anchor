@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 点赞
+ * 点赞相关
  */
 @Controller
 public class LikeController implements CommunityConstant {
@@ -47,7 +47,6 @@ public class LikeController implements CommunityConstant {
      * @param entityId     实体 Id
      * @param entityUserId 赞的帖子/评论的作者 id
      * @param postId       帖子的 id (点赞了哪个帖子，点赞的评论属于哪个帖子，点赞的回复属于哪个帖子)
-     * @return
      */
     @PostMapping("/like")
     @ResponseBody

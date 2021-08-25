@@ -29,7 +29,7 @@ public class Comment {
     private int targetId;
     // 内容
     private String content;
-    // 状态：0 正常，1 禁用
+    // 评论状态: 0 正常, 1 禁用
     private int status;
     // 发布时间
     private Date createTime;

@@ -23,7 +23,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 关注(目前只做了关注用户)
+ * 关注: 关注的目标可以是用户、帖子和题目
+ * 目前只做了关注用户
  */
 @Controller
 public class FollowController implements CommunityConstant{
@@ -42,15 +43,16 @@ public class FollowController implements CommunityConstant{
 
     /**
      * 关注
-     * @param entityType
-     * @param entityId
+     * @param entityType  实体类型: 用户类型为 3
+     * @param entityId    实体ID: 比如用户 ID
      * @return
      */
     @PostMapping("/follow")
     @ResponseBody
     public String follow(int entityType, int entityId) {
+        // 获取当前用户
         User user = hostHolder.getUser();
-
+        // 使得当前用户关注 entityType 类型的 entityId
         followService.follow(user.getId(), entityType, entityId);
 
         // 触发关注事件（系统通知）

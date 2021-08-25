@@ -3,9 +3,9 @@ package com.reanon.community.dao;
 import com.reanon.community.entity.LoginTicket;
 import org.apache.ibatis.annotations.*;
 
+// 后期采用 Redis 来保存登录凭证，不再从 MySQL 中直接查询
 @Mapper
-// 废弃注解
-@Deprecated
+@Deprecated // 废弃注解
 public interface LoginTicketMapper {
     // 注解的方式写sql
     @Insert({"insert into login_ticket(user_id,ticket,status,expired) ",

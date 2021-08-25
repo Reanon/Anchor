@@ -25,7 +25,7 @@ public class MessageInterceptor implements HandlerInterceptor {
     private MessageService messageService;
 
     /**
-     * Controller之后模板之前被调用
+     * Controller 之后模板之前被调用
      * 获取未读私信/系统通知的数量
      * @param request
      * @param response

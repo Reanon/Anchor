@@ -20,7 +20,10 @@ import java.util.Date;
 public class LoginTicket {
     private int id;
     private int userId;
-    private String ticket; // 凭证
-    private int status; // 状态（是否有效）
-    private Date expired; // 过期时间
+    // 凭证: 随机字符串
+    private String ticket;
+    // 状态（是否有效）
+    private int status;
+    // 过期时间
+    private Date expired;
 }

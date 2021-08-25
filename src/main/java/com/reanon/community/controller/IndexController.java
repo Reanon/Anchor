@@ -48,7 +48,7 @@ public class IndexController {
 
     /**
      * 进入首页
-     * 方法调用前, SpringMVC会自动实例化Model和 Page,并将 Page 注入Model
+     * 方法调用前, SpringMVC 会自动实例化 Model 和 Page, 并将 Page 注入 Model
      * 所以,在 thymeleaf 中可以直接访问 Page 对象中的数据
      *
      * @param orderMode 默认是 0, 即按照最新方式排
@@ -79,7 +79,6 @@ public class IndexController {
                 // 帖子对应的点赞
                 long likeCount = likeService.findEntityLikeCount(ENTITY_TYPE_POST, post.getId());
                 map.put("likeCount", likeCount);
-
                 discussPosts.add(map);
             }
         }

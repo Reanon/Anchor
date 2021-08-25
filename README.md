@@ -160,3 +160,176 @@ Anchor 是一套前后端不分离的开源社区系统，基于目前主流 Jav
 
 ### 🎊 界面展示
 
+## 🎡功能逻辑图
+
+> 单向绿色箭头：
+>
+> - 前端模板 -> Controller：表示这个前端模板中有一个超链接是由这个 Controller 处理的
+> - Controller -> 前端模板：表示这个 Controller 会像该前端模板传递数据或者跳转
+>
+> 双向绿色箭头：表示 Controller 和前端模板之间进行参数的相互传递或使用
+>
+> 单向蓝色箭头： A -> B，表示 A 方法调用了 B 方法
+>
+> 单向红色箭头：数据库或缓存操作
+
+### 注册
+
+- 用户注册成功，将用户信息存入 MySQL，但此时该用户状态为未激活
+- 向用户发送激活邮件，用户点击链接则激活账号（Spring Mail）
+
+<img width="660px" src="https://gitee.com/veal98/images/raw/master/img/20210204222249.png" />
+
+### 登录 | 登出
+
+登录认证模块跳过了 Spring Secuity 自带的认证机制。主要逻辑如下：
+
+- 进入登录界面，随机生成一个字符串来标识这个将要登录的用户，将这个字符串短暂的存入 Cookie（60 秒）；
+- 动态生成验证码，并将验证码及标识该用户的字符串短暂存入 Redis（60 秒）；
+- 为登录成功（验证用户名、密码、验证码）的用户随机生成登录凭证且设置状态为有效，并将登录凭证及其状态等信息永久存入 Redis，再在 Cookie 中存一份登录凭证；
+- 使用拦截器在所有的请求执行之前，从 Cookie 中获取登录凭证，只要 Redis 中该凭证有效并在有效期内，本次请求就会一直持有该用户信息（使用 ThreadLocal 持有用户信息，保证多台服务器上用户的登录状态同步）；
+- 勾选记住我，则延长 Cookie 中登录凭证的有效时间；
+- 用户登出，将凭证状态设为无效，并更新 Redis 中该登录凭证的相关信息。
+
+下图是登录模块的功能逻辑图，并没有使用 Spring Security 提供的认证逻辑（我觉得这个模块是最复杂的，这张图其实很多细节还没有画全）
+
+![](https://gitee.com/veal98/images/raw/master/img/20210204233233.png)
+
+### 分页显示所有的帖子
+
+- 支持按照 「发帖时间」显示
+- 支持按照 「热度排行」显示（Spring Quartz）
+- 将热帖列表和所有帖子的总数存入本地缓存 Caffeine（利用分布式定时任务 Spring Quartz 每隔一段时间就刷新计算帖子的热度/分数 — 见下文，而 Caffeine 里的数据更新不用我们操心，它天生就会自动的更新它拥有的数据，给它一个初始化方法就完事儿）
+
+<img width="660px" src="https://gitee.com/veal98/images/raw/master/img/20210204222822.png" />
+
+
+
+### 账号设置
+
+- 修改头像（异步请求）
+  - 将用户选择的头像图片文件上传至七牛云服务器
+- 修改密码
+
+此处只画出修改头像：
+
+<img width="700px" src="https://gitee.com/veal98/images/raw/master/img/20210206121201.png" />
+
+### 发布帖子（异步请求）
+
+发布帖子（过滤敏感词），将其存入 MySQL
+
+<img width="660px" src="https://gitee.com/veal98/images/raw/master/img/20210206122521.png" />
+
+### 显示评论及相关信息
+
+关于评论模块需要注意的就是评论表的设计，把握其中字段的含义，才能透彻了解这个功能的逻辑。
+
+评论 Comment 的目标类型（帖子，评论） entityType 和 entityId 以及对哪个用户进行评论/回复 targetId 是由前端传递给 DiscussPostController 的
+
+<img width="660px" src="https://gitee.com/veal98/images/raw/master/img/20210207150925.png" />
+
+一个帖子的详情页需要封装的信息大概如下：
+
+<img width="660px" src="https://gitee.com/veal98/images/raw/master/img/20210207151328.png" />
+
+### 添加评论（事务管理）
+
+发布对帖子的评论（过滤敏感词），将其存入 MySQL
+
+<img width="660px" src="https://gitee.com/veal98/images/raw/master/img/20210207122908.png" />
+
+### 私信列表和详情页
+
+<img width="700px" src="https://gitee.com/veal98/images/raw/master/img/20210207161130.png" />
+
+### 发送私信（异步请求）
+
+<img width="660px" src="https://gitee.com/veal98/images/raw/master/img/20210207161500.png" />
+
+### 点赞（异步请求）
+
+将点赞相关信息存入 Redis 的数据结构 set 中。
+
+- 其中，key 命名为  `like:entity:entityType:entityId`，value 即点赞用户的 id。
+- 比如 key =  `like:entity:2:246`  value =  `11` 表示用户 11 对实体类型 2 即评论进行了点赞，该评论的 id 是 246
+
+某个用户的获赞数量对应的存储在 Redis 中的 key 是 `like:user:userId`，value 就是这个用户的获赞数量
+
+<img width="700px" src="https://gitee.com/veal98/images/raw/master/img/20210207165837.png"  />
+
+### 我的获赞数量
+
+<img width="660px" src="https://gitee.com/veal98/images/raw/master/img/20210207170003.png" />
+
+### 关注（异步请求）
+
+- 若 A 关注了 B，则 A 是 B 的粉丝 Follower，B 是 A 的目标 Followee
+- 关注的目标可以是用户、帖子、题目等，在实现时将这些目标抽象为实体（目前只做了关注用户）
+
+将某个用户关注的实体相关信息存储在 Redis 的数据结构 zset 中：key 是 `followee:userId:entityType` ，对应的 value 是 `zset(entityId, now)` ，以关注的时间进行排序。比如说 `followee:111:3` 对应的value `(20, 2020-02-03-xxxx)`，表明用户 111 关注了一个类型为 3 的实体即人(用户)，关注的这个实体 id 是 20，关注该实体的时间是 2020-02-03-xxxx
+
+同样的，将某个实体拥有的粉丝相关信息也存储在 Redis 的数据结构 zset 中：key 是 `follower:entityType:entityId`，对应的 value 是 `zset(userId, now)`，以关注的时间进行排序
+
+<img width="660px" src="https://gitee.com/veal98/images/raw/master/img/20210207174046.png" />
+
+### 关注列表
+
+<img width="660px" src="https://gitee.com/veal98/images/raw/master/img/20210207175621.png" />
+
+### 发送系统通知
+
+![](https://gitee.com/veal98/images/raw/master/img/20210207182917.png)
+
+### 显示系统通知
+
+![](https://gitee.com/veal98/images/raw/master/img/20210208153059.png)
+
+### 搜索
+
+- 发布事件
+  - 发布帖子时，通过消息队列将帖子异步地提交到 Elasticsearch 服务器
+  - 为帖子增加评论时，通过消息队列将帖子异步地提交到 Elasticsearch 服务器
+- 搜索服务
+  - 从 Elasticsearch 服务器搜索帖子
+  - 从 Elasticsearch 服务器删除帖子（当帖子从数据库中被删除时）
+- 显示搜索结果
+
+![](https://gitee.com/veal98/images/raw/master/img/20210208161936.png)
+
+类似的，置顶、加精也会触发发帖事件，就不再图里面画出来了。
+
+### 置顶加精删除（异步请求）
+
+<img width="660px" src="https://gitee.com/veal98/images/raw/master/img/20210208171729.png" />
+
+### 网站数据统计
+
+- 独立访客 UV
+  - 存入 Redis 的 HyperLogLog
+  - 支持单日查询和区间日期查询
+- 日活跃用户 DAU
+  - 存入 Redis 的 Bitmap
+  - 支持单日查询和区间日期查询
+- 权限管理（Spring Security）
+  - 只有管理员可以查看网站数据统计
+
+![](https://gitee.com/veal98/images/raw/master/img/20210208170801.png)
+
+### 帖子热度计算
+
+每次发生点赞（给帖子点赞）、评论（给帖子评论）、加精的时候，就将这些帖子信息存入缓存 Redis 中，然后通过分布式的定时任务 Spring Quartz，每隔一段时间就从缓存中取出这些帖子进行计算分数。
+
+帖子分数/热度计算公式：分数（热度） = 权重 + 发帖距离天数
+
+```java
+// 计算权重
+double w = (wonderful ? 75 : 0) + commentCount * 10 + likeCount * 2;
+// 分数 = 权重 + 发帖距离天数
+double score = Math.log10(Math.max(w, 1))
+    + (post.getCreateTime().getTime() - epoch.getTime()) / (1000 * 3600 * 24);
+```
+
+![](https://gitee.com/veal98/images/raw/master/img/20210208173636.png)
+
+## 

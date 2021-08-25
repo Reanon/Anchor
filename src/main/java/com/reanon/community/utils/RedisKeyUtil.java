@@ -22,6 +22,7 @@ public class RedisKeyUtil {
      * 某个实体(帖子、评论/回复)的获赞
      * like:entity:entityType:entityId -> set(userId)
      * 谁给这个实体点了赞，就将这个用户的id存到这个实体对应的集合里
+     *
      * @param entityType 实体类型
      * @param entityId 实体Id
      */

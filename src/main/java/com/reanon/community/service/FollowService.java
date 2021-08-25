@@ -27,9 +27,9 @@ public class FollowService implements CommunityConstant {
     /**
      * 关注
      *
-     * @param userId
-     * @param entityType
-     * @param entityId
+     * @param userId     主动关注的人
+     * @param entityType 被关注的实体类型
+     * @param entityId   被关注的 Id
      */
     public void follow(int userId, int entityType, int entityId) {
         // 事务管理
@@ -39,12 +39,12 @@ public class FollowService implements CommunityConstant {
                 // 生成 Redis 的 key
                 // 用户关注实体的key
                 String followeeKey = RedisKeyUtil.getFolloweeKey(userId, entityType);
-                // 实体拥有粉丝的key
+                // 被关注的实体的 Key: 实体的类型 和 Id
                 String followerKey = RedisKeyUtil.getFollowerKey(entityType, entityId);
 
                 // 1、开启事务管理
                 redisOperations.multi();
-                // 插入数据
+                // 插入数据: 插入到 zset 中, 以当前时间作为 score
                 redisOperations.opsForZSet().add(followeeKey, entityId, System.currentTimeMillis());
                 redisOperations.opsForZSet().add(followerKey, userId, System.currentTimeMillis());
                 // 2、提交事务
@@ -56,9 +56,9 @@ public class FollowService implements CommunityConstant {
     /**
      * 取消关注
      *
-     * @param userId
-     * @param entityType
-     * @param entityId
+     * @param userId     主动关注的用户
+     * @param entityType 被关注的实体类型
+     * @param entityId   被关注的 Id
      */
     public void unfollow(int userId, int entityType, int entityId) {
         redisTemplate.execute(new SessionCallback() {
@@ -95,8 +95,8 @@ public class FollowService implements CommunityConstant {
     /**
      * 查询某个实体的粉丝数量
      *
-     * @param entityType
-     * @param entityId
+     * @param entityType  实体类型
+     * @param entityId    实体 Id
      */
     public long findFollowerCount(int entityType, int entityId) {
         String followerKey = RedisKeyUtil.getFollowerKey(entityType, entityId);
@@ -119,9 +119,9 @@ public class FollowService implements CommunityConstant {
     /**
      * 分页查询某个用户关注的人（偷个懒，此处没有做对其他实体的关注）
      *
-     * @param userId
-     * @param offset
-     * @param limit
+     * @param userId  用户 Id
+     * @param offset  分页
+     * @param limit   每页显示条数
      * @return
      */
     public List<Map<String, Object>> findFollowees(int userId, int offset, int limit) {
@@ -149,12 +149,12 @@ public class FollowService implements CommunityConstant {
     }
 
     /**
-     * 分页查询某个用户的粉丝（偷个懒，此处没有做对其他实体的粉丝）
+     * 分页查询某个用户的粉丝
+     * （此处没有做对其他实体的粉丝）
      *
-     * @param userId
-     * @param offset
-     * @param limit
-     * @return
+     * @param userId  用户 Id
+     * @param offset  分页
+     * @param limit   每页显示条数
      */
     public List<Map<String, Object>> findFollowers(int userId, int offset, int limit) {
         String followerKey = RedisKeyUtil.getFollowerKey(ENTITY_TYPE_USER, userId);

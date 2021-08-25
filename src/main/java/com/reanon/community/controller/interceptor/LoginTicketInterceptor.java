@@ -40,12 +40,14 @@ public class LoginTicketInterceptor implements HandlerInterceptor {
             // 查询凭证
             LoginTicket loginTicket = userService.findLoginTicket(ticket);
             // 检查凭证状态（是否有效）以及是否过期
+            // 登录凭证存在、有效、且过期时间晚于当前时间
             if (loginTicket != null && loginTicket.getStatus() == 0 && loginTicket.getExpired().after(new Date())) {
                 // 根据凭证查询用户
                 User user = userService.findUserById(loginTicket.getUserId());
                 // 在本次请求中持有用户信息
                 hostHolder.setUser(user);
 
+                // --下面的没有用到
                 // 构建用户认证的结果, 并存入 SecurityContext, 以便于 Spring Security 进行授权
                 Authentication authentication = new UsernamePasswordAuthenticationToken(
                         user, user.getPassword(), userService.getAuthorities(user.getId())
@@ -71,6 +73,7 @@ public class LoginTicketInterceptor implements HandlerInterceptor {
         // 从线程中得到当前用户
         User user = hostHolder.getUser();
         if (user != null && modelAndView != null) {
+            // 将当前用户传入到模板引擎
             modelAndView.addObject("loginUser", user);
         }
     }
@@ -90,6 +93,7 @@ public class LoginTicketInterceptor implements HandlerInterceptor {
                                 Exception ex) throws Exception {
         // 清理本次的用户
         hostHolder.clear();
+
         // SecurityContextHolder.clearContext();
     }
 }

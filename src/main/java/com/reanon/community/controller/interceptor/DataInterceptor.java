@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Data 拦截器, 用以做统计
+ * Data 拦截器: 用以做网站统计
  *
  * @author reanon
  * @create 2021-07-22
@@ -27,9 +27,10 @@ public class DataInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        // 统计 UV
+
         // 获取 IP
         String ip = request.getRemoteHost();
+        // 统计 UV
         dataService.recordUV(ip);
 
         // 统计 DAU

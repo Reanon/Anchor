@@ -89,7 +89,7 @@ public class MessageService {
     /**
      * 添加一条私信
      *
-     * @param message
+     * @param message 私信
      */
     public int addMessage(Message message) {
         // 转义 HTML 标签

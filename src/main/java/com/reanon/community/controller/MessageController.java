@@ -208,7 +208,7 @@ public class MessageController {
     }
 
     /**
-     * 通知列表, 只显示最新一条消息
+     * 通知列表: 只显示最新一条消息
      *
      * @param model
      */
@@ -216,7 +216,7 @@ public class MessageController {
     public String getNoticeList(Model model) {
         // 获取当前用户
         User user = hostHolder.getUser();
-        // 查询评论类通知
+        // 1、查询评论类通知
         Message message = messageService.findLatestNotice(user.getId(), TOPIC_COMMNET);
         // 封装通知需要的各种数据
         if (message != null) {
@@ -225,6 +225,7 @@ public class MessageController {
             messageVO.put("message", message);
             // 将消息里的特殊字符进行转义
             String content = HtmlUtils.htmlUnescape(message.getContent());
+
             // 消息内容转为 Map
             Map<String, Object> data = JSONObject.parseObject(content, HashMap.class);
 
@@ -232,12 +233,13 @@ public class MessageController {
             messageVO.put("entityType", data.get("entityType"));
             messageVO.put("entityId", data.get("entityId"));
             messageVO.put("postId", data.get("postId"));
-
+            // 2、查询系统通知中评论的数量
             int count = messageService.findNoticeCount(user.getId(), TOPIC_COMMNET);
             messageVO.put("count", count);
-
+            // 3、查询系统通知中未读的评论的数量
             int unread = messageService.findNoticeUnReadCount(user.getId(), TOPIC_COMMNET);
             messageVO.put("unread", unread);
+
             // 评论类型
             model.addAttribute("commentNotice", messageVO);
         }
@@ -300,12 +302,11 @@ public class MessageController {
     }
 
     /**
-     * 查询某个主题所包含的通知列表
+     * 查询某个主题所包含的通知列表, 并将消息设置为已读
      *
      * @param topic 主题
      * @param page  分页
      * @param model
-     * @return
      */
     @GetMapping("/notice/detail/{topic}")
     public String getNoticeDetail(@PathVariable("topic") String topic, Page page, Model model) {

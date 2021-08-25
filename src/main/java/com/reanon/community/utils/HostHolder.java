@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class HostHolder {
-    // 创建 ThreadLocal 对象
+    // 创建 ThreadLocal 对象: 每个线程里都存着一个 user
     private ThreadLocal<User> users = new ThreadLocal<>();
     // 存储 User
     public void setUser(User user) {

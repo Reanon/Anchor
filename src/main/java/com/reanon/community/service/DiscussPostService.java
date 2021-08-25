@@ -59,9 +59,9 @@ public class DiscussPostService {
     public void init() {
         // 初始化热帖列表缓存
         postListCache = Caffeine.newBuilder()
-                // 缓存数量
+                // 缓存数量: 15
                 .maximumSize(maxSize)
-                // 过期时间
+                // 过期时间: 180 秒
                 .expireAfterWrite(expireSeconds, TimeUnit.SECONDS)
                 // 传入 CacheLoader
                 .build(new CacheLoader<String, List<DiscussPost>>() {
@@ -90,6 +90,7 @@ public class DiscussPostService {
                 });
 
         // 初始化帖子总数缓存
+        // 3 分钟过期之后, 就会从数据库中重新生成新的帖子总数
         postRowsCache = Caffeine.newBuilder()
                 .maximumSize(maxSize)
                 .expireAfterWrite(expireSeconds, TimeUnit.SECONDS)
@@ -97,6 +98,7 @@ public class DiscussPostService {
                     @Nullable
                     @Override
                     public Integer load(@NonNull Integer key) throws Exception {
+
                         // 访问本地数据库
                         logger.debug("load post rows from DB");
                         return discussPostMapper.selectDiscussPostRows(key);
@@ -117,9 +119,11 @@ public class DiscussPostService {
     public List<DiscussPost> findDiscussPosts(int userId, int offset, int limit, int orderMode) {
         // 查询本地缓存(当查询的是所有用户的帖子并且按照热度排序时)
         if (userId == 0 && orderMode == 1) {
+            // 从本地缓存中查
+            // 如果不存在则会从数据库中查，然后存入缓存中
             return postListCache.get(offset + ":" + limit);
         }
-        // 查询数据库
+        // 查询数据库: 打印日志
         logger.debug("load post list from DB");
         return discussPostMapper.selectDiscussPosts(userId, offset, limit, orderMode);
     }

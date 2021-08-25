@@ -58,13 +58,14 @@ public class CommentController {
         comment.setCreateTime(new Date());
         commentService.addComment(comment);
 
-        // 触发评论事件(系统通知)
+        // 触发评论事件(系统通知)，通过 Kafka 的消息队列将帖子异步提交到 Elasticsearch 服务器
         Event event = new Event()
                 .setTopic(TOPIC_COMMNET)
                 .setUserId(hostHolder.getUser().getId())
                 .setEntityType(comment.getEntityType())
                 .setEntityId(comment.getEntityId())
                 .setData("postId", discussPostId);
+
         // 如果给帖子作评论
         if (comment.getEntityType() == ENTITY_TYPE_POST) {
             // 查找当前帖子的作者

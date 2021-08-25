@@ -41,9 +41,11 @@ public class LoginController {
 
     @Autowired
     private UserService userService;
+
     // 注入验证码生成器
     @Autowired
     private Producer kaptchaProducer;
+
     // 使用Redis 优化验证码存储
     @Autowired
     private RedisTemplate redisTemplate;
@@ -74,13 +76,16 @@ public class LoginController {
     @PostMapping("/register")
     public String register(Model model, User user) {
         // 注册用户, 获取返回信息
+        // map 为错误消息提示, 如果为空则说明注册成功了
         Map<String, Object> map = userService.register(user);
         if (map == null || map.isEmpty()) {
+            // 将正确的信息显示出来
             model.addAttribute("msg", "注册成功, 我们已经向您的邮箱发送了一封激活邮件，请尽快激活!");
             // 设置跳转目标
             model.addAttribute("target", "/index");
             return "/site/operate-result";
         } else {
+            // 将错误信息传递到前端显示出来
             model.addAttribute("usernameMsg", map.get("usernameMsg"));
             model.addAttribute("passwordMsg", map.get("passwordMsg"));
             model.addAttribute("emailMsg", map.get("emailMsg"));
@@ -89,7 +94,7 @@ public class LoginController {
     }
 
     /**
-     * 激活用户
+     * 用户点击邮件中的激活连接, 跳转至此,激活用户
      * 使用 RestFul 风格传惨
      *
      * @param code 激活码
@@ -114,6 +119,7 @@ public class LoginController {
 
     /**
      * 生成验证码, 并存入 Redis
+     * 点击验证码图片就生成
      *
      * @param response
      */
@@ -127,15 +133,16 @@ public class LoginController {
         // 验证码存入session
         // session.setAttribute("kaptcha", text);
 
-        // 验证码的归属者
+        // 生成验证码的归属者: 随机字符串
         String kaptchaOwner = CommunityUtil.generateUUID();
         // 将验证码存入 cookie 并设置过期时间
         Cookie cookie = new Cookie("kaptchaOwner", kaptchaOwner);
         cookie.setMaxAge(60);
         cookie.setPath(contextPath);
-        response.addCookie(cookie);
-        // 将验证码存入 redis
+        response.addCookie(cookie); // 在响应中添加上 cookie 信息
+        // 通过随机字符串生成 Redis 中的 key
         String redisKey = RedisKeyUtil.getKaptchaKey(kaptchaOwner);
+        // 将验证码存入 redis
         redisTemplate.opsForValue().set(redisKey, text, 60, TimeUnit.SECONDS);
 
 
@@ -173,8 +180,9 @@ public class LoginController {
         // 从 session 中获取验证码
         // String kaptcha = (String) session.getAttribute("kaptcha");
         String kaptcha = null;
+        // 从 Cookie 中获取该用户的随机字符串
         if (StringUtils.isNotBlank(kaptchaOwner)) {
-            // 从验证码归属者中获取该验证码在Redis 中的 key
+            // 从验证码归属者中获取该验证码在 Redis 中的 key
             String redisKey = RedisKeyUtil.getKaptchaKey(kaptchaOwner);
             // 获取验证码
             kaptcha = (String) redisTemplate.opsForValue().get(redisKey);
@@ -187,17 +195,19 @@ public class LoginController {
             return "/site/login";
         }
 
-        // 凭证过期时间（是否记住我）
+        // 凭证过期时间（是否记住我）: 点击了就是记住半年, 没点就只记住12小时
         int expiredSeconds = rememberMe ? REMEMBER_EXPIRED_SECONDS : DEFAULT_EXPIRED_SECONDS;
         // 验证用户名和密码
         Map<String, Object> map = userService.login(username, password, expiredSeconds);
-        // 判断是否登录成功
+        // 判断是否登录成功: 包含 ticket 字段就算成功
         if (map.containsKey("ticket")) {
             // 账号和密码均正确，则服务端会生成 ticket，浏览器通过 cookie 存储 ticket
             Cookie cookie = new Cookie("ticket", map.get("ticket").toString());
             // 设置 cookie 有效范围, 使得整个项目都有效
             cookie.setPath(contextPath);
+            // 设置 cookie 有效时间
             cookie.setMaxAge(expiredSeconds);
+            // 将 Cookie 响应给客户端
             response.addCookie(cookie);
             return "redirect:/index";
         } else {
@@ -216,6 +226,7 @@ public class LoginController {
  */
 @GetMapping("/logout")
 public String logout(@CookieValue("ticket") String ticket) {
+    // 设置登录凭证为无效
     userService.logout(ticket);
     // 清理配置
     SecurityContextHolder.clearContext();

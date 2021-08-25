@@ -116,7 +116,7 @@ public class UserController implements CommunityConstant {
         }
         // 文件名
         String filename = headerImage.getOriginalFilename();
-        //.png等后缀
+        //.png 等后缀
         String suffix = filename.substring(filename.lastIndexOf("."));
         if (!suffix.equals(".png")) {
             model.addAttribute("error", "文件格式不正确！");
@@ -141,9 +141,10 @@ public class UserController implements CommunityConstant {
         }
 
         // 更新 headerUrl 的 Web 访问路径
-        // 文件位置(web访问路径): http://${bucket}.oss-cn-beijing.aliyuncs.com/${dirName}/${filename}
+        // 获取当前用户
         User user = hostHolder.getUser();
         // 服务器实际存放头像位置
+        // 文件位置(web访问路径): http://${bucket}.oss-cn-beijing.aliyuncs.com/${dirName}/${filename}
         String headerUrl = "http://" + bucket + "." + endpoint + "/" + filename;
         userService.updateHeader(user.getId(), headerUrl);
 
@@ -267,15 +268,16 @@ public class UserController implements CommunityConstant {
 
         // 用户
         model.addAttribute("user", user);
-        // 获赞数量
+        // 获赞数量: 从 Redis 中获取
         int userLikeCount = likeService.findUserLikeCount(userId);
         model.addAttribute("userLikeCount", userLikeCount);
-        // 关注数量
+        // 关注数量: 从 Redis 的 zset 中取
         long followeeCount = followService.findFolloweeCount(userId, ENTITY_TYPE_USER);
         model.addAttribute("followeeCount", followeeCount);
-        // 粉丝数量
+        // 粉丝数量: 获取该用户的粉丝数
         long followerCount = followService.findFollowerCount(ENTITY_TYPE_USER, userId);
         model.addAttribute("followerCount", followerCount);
+
         // 当前登录用户是否已关注该用户
         boolean hasFollowed = false;
         if (hostHolder.getUser() != null) {

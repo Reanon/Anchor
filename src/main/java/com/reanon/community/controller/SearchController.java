@@ -45,7 +45,7 @@ public class SearchController {
      */
     @RequestMapping(path = "search", method = RequestMethod.GET)
     public String search(String keyword, Page page, Model model) {
-        // 搜索帖子
+        // 搜索帖子: 从 elasticsearch 服务器中进行搜索
         Map<String, Object> result = elasticsearchService.searchDiscussPost(keyword, page.getCurrent() - 1,
                 page.getLimit());
         List<DiscussPost> discussPostList = (List<DiscussPost>) result.get("discussPosts");

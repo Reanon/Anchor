@@ -56,7 +56,7 @@ public class CommunityUtil {
         return json.toJSONString();
     }
 
-    // 重载 getJSONString 方法, s服务端方法可能不返回业务数据
+    // 重载 getJSONString 方法, 服务端方法可能不返回业务数据
     public static String getJSONString(int code, String msg) {
         return getJSONString(code, msg, null);
     }

@@ -16,12 +16,12 @@ public class EventProducer {
     private KafkaTemplate kafkaTemplate;
 
     /**
-     * kafka 将事件存入topic
+     * kafka 将事件存入 topic
      *
      * @param event 事件
      */
     public void fireEvent(Event event) {
-        // 将事件发布到指定的主题
+        // 将事件内容发布到指定的主题
         kafkaTemplate.send(event.getTopic(), JSONObject.toJSONString(event));
     }
 }

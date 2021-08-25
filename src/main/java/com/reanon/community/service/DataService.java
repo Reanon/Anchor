@@ -37,6 +37,7 @@ public class DataService {
      */
     public void recordUV(String ip) {
         // 将 PREFIX_UV + SPLIT + date 作为独立访客的 key
+        // 以时间作为 key
         String redisKey = RedisKeyUtil.getUVKey(dateFormat.format(new Date()));
         // 存入 HyperLogLog
         redisTemplate.opsForHyperLogLog().add(redisKey, ip);
@@ -58,6 +59,7 @@ public class DataService {
         // 实例化 Calendar
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(start);
+        // 从 Redis 中逐天取出 key
         // 当 calendar 时间早于 end 就循环
         while (!calendar.getTime().after(end)) {
             // 取出这天的 key，存入 list
@@ -66,7 +68,7 @@ public class DataService {
             calendar.add(Calendar.DATE, 1); // 加1天
         }
 
-        // 合并这些天的 UV
+        // 合并这些天的 UV: 组成一个新的 key (区间 UV)
         String redisKey = RedisKeyUtil.getUVKey(dateFormat.format(start), dateFormat.format(end));
         // 将 keyList 中的值合并，然后存入 redisKey 中
         redisTemplate.opsForHyperLogLog().union(redisKey, keyList.toArray());
@@ -90,8 +92,8 @@ public class DataService {
     /**
      * 统计指定日期范围内的 DAU
      *
-     * @param start
-     * @param end
+     * @param start  开始日期
+     * @param end    结束日期
      */
     public long calculateDAU(Date start, Date end) {
         if (start == null || end == null) {

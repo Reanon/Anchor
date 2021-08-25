@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.Date;
 
 /**
- * 网站数据统计
+ * 网站数据统计: 独立访客、日活跃用户等
  *
  * @author reanon
  * @create 2021-07-22
@@ -32,7 +32,7 @@ public class DataController {
     }
 
     /**
-     * 统计网站 uv
+     * 统计网站 uv（独立访客）
      *    - @DateTimeFormat 设置传入字符串的格式为日期
      *
      * @param start 开始日期

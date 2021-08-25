@@ -75,48 +75,13 @@ public class DiscussPostController implements CommunityConstant {
         return "/site/discuss-publish";
     }
 
-    // /**
-    //  * markdown 图片上传
-    //  *
-    //  * @param file
-    //  * @return
-    //  */
-    // @PostMapping("/uploadMdPic")
-    // @ResponseBody
-    // public String uploadMdPic(@RequestParam(value = "editormd-image-file", required = false) MultipartFile file) {
-    //
-    //     String url = null; // 图片访问地址
-    //     try {
-    //         // 获取上传文件的名称
-    //         String trueFileName = file.getOriginalFilename();
-    //         String suffix = trueFileName.substring(trueFileName.lastIndexOf("."));
-    //         String fileName = CommunityUtil.generateUUID() + suffix;
-    //
-    //         // 图片存储路径
-    //         File dest = new File(editormdUploadPath + "/" + fileName);
-    //         if (!dest.getParentFile().exists()) {
-    //             dest.getParentFile().mkdirs();
-    //         }
-    //
-    //         // 保存图片到存储路径
-    //         file.transferTo(dest);
-    //
-    //         // 图片访问地址
-    //         url = domain + contextPath + "/editor-md-upload/" + fileName;
-    //     } catch (Exception e) {
-    //         e.printStackTrace();
-    //         return CommunityUtil.getEditorMdJSONString(0, "上传失败", url);
-    //     }
-    //
-    //     return CommunityUtil.getEditorMdJSONString(1, "上传成功", url);
-    // }
+
 
     /**
      * 添加帖子（发帖）
      *
-     * @param title
-     * @param content
-     * @return
+     * @param title   帖子标题
+     * @param content 帖子内容
      */
     @PostMapping("/add")
     @ResponseBody
@@ -132,10 +97,10 @@ public class DiscussPostController implements CommunityConstant {
         discussPost.setTitle(title);
         discussPost.setContent(content);
         discussPost.setCreateTime(new Date());
-        // 添加帖子
+        // 添加帖子: 需要避免注入攻击和敏感词过滤
         discussPostService.addDiscussPost(discussPost);
 
-        // 触发发帖事件，通过消息队列将其存入 Elasticsearch 服务器
+        // 触发发帖事件，通过 Kafka 的消息队列将消息传给 Elasticsearch 服务器
         Event event = new Event()
                 .setTopic(TOPIC_PUBLISH)
                 .setUserId(user.getId())
@@ -255,7 +220,7 @@ public class DiscussPostController implements CommunityConstant {
     public String updateTop(int id, int type) {
         discussPostService.updateType(id, type);
 
-        // 触发发帖事件，通过消息队列将其存入 Elasticsearch 服务器
+        // 触发发帖事件，通过 Kafka 的消息队列将消息异步传给 Elasticsearch 服务器
         Event event = new Event()
                 .setTopic(TOPIC_PUBLISH)
                 .setUserId(hostHolder.getUser().getId())
@@ -306,4 +271,39 @@ public class DiscussPostController implements CommunityConstant {
         eventProducer.fireEvent(event);
         return CommunityUtil.getJSONString(0);
     }
+    // /**
+    //  * markdown 图片上传
+    //  *
+    //  * @param file
+    //  * @return
+    //  */
+    // @PostMapping("/uploadMdPic")
+    // @ResponseBody
+    // public String uploadMdPic(@RequestParam(value = "editormd-image-file", required = false) MultipartFile file) {
+    //
+    //     String url = null; // 图片访问地址
+    //     try {
+    //         // 获取上传文件的名称
+    //         String trueFileName = file.getOriginalFilename();
+    //         String suffix = trueFileName.substring(trueFileName.lastIndexOf("."));
+    //         String fileName = CommunityUtil.generateUUID() + suffix;
+    //
+    //         // 图片存储路径
+    //         File dest = new File(editormdUploadPath + "/" + fileName);
+    //         if (!dest.getParentFile().exists()) {
+    //             dest.getParentFile().mkdirs();
+    //         }
+    //
+    //         // 保存图片到存储路径
+    //         file.transferTo(dest);
+    //
+    //         // 图片访问地址
+    //         url = domain + contextPath + "/editor-md-upload/" + fileName;
+    //     } catch (Exception e) {
+    //         e.printStackTrace();
+    //         return CommunityUtil.getEditorMdJSONString(0, "上传失败", url);
+    //     }
+    //
+    //     return CommunityUtil.getEditorMdJSONString(1, "上传成功", url);
+    // }
 }

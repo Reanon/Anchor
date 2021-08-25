@@ -66,6 +66,7 @@ public class EventConsumer implements CommunityConstant {
         // 发送系统通知
         Message message = new Message();
         message.setFromId(SYSTEM_USER_ID);
+        // 获取通知要发送的对象
         message.setToId(event.getEntityUserId());
         message.setConversationId(event.getTopic());
         message.setCreateTime(new Date());
@@ -101,6 +102,7 @@ public class EventConsumer implements CommunityConstant {
             logger.error("消息格式错误");
             return;
         }
+        // 将帖子保存到 elasticsearch 服务器
         DiscussPost post = discussPostService.findDiscussPostById(event.getEntityId());
         elasticsearchService.saveDiscussPost(post);
     }
